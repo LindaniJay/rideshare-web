@@ -119,7 +119,7 @@ export default function PlatformFeatures() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/coming-soon"
-              className="btn-primary bg-white text-primary-500 hover:bg-gray-100 inline-flex items-center justify-center"
+              className="btn-primary bg-none bg-white text-primary-600 hover:bg-gray-100 inline-flex items-center justify-center"
             >
               Go to Platform
               <ArrowRight className="ml-2" size={20} />

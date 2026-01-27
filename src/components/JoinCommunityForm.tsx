@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 
 type Interest = 'renting' | 'hosting' | 'both';
 
-const PHIWE_EMAIL = 'phiwetoni3@gmail.com';
+const PHIWE_EMAIL = 'rideshare.sasup@gmail.com';
 
 function buildMailtoUrl(to: string, subject: string, body: string) {
   const params = new URLSearchParams({

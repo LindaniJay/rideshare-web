@@ -168,7 +168,7 @@ export default function Team() {
               operations, or trust & safety, we'd love to hear from you.
             </p>
             <a
-              href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Careers"
+              href="mailto:rideshare.sasup@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Careers"
               className="btn-primary inline-flex items-center"
             >
               Explore Career Opportunities

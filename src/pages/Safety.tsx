@@ -79,7 +79,7 @@ export default function Safety() {
     {
       title: 'Email Support',
       description: 'Non-urgent inquiries and documentation.',
-      contact: 'phiwetoni3@gmail.com',
+      contact: 'rideshare.sasup@gmail.com',
       icon: <Mail size={20} />,
     },
   ];

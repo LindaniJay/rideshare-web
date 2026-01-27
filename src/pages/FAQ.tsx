@@ -25,7 +25,7 @@ export default function FAQ() {
     },
     {
       question: 'What if the car breaks down during my rental?',
-      answer: 'First, contact the host using the platform to coordinate next steps. If you need help, email us at phiwetoni3@gmail.com and include your booking details.',
+      answer: 'First, contact the host using the platform to coordinate next steps. If you need help, email us at rideshare.sasup@gmail.com and include your booking details.',
     },
   ];
 
@@ -75,7 +75,7 @@ export default function FAQ() {
     },
     {
       question: 'How do I contact customer support?',
-      answer: 'Email us at phiwetoni3@gmail.com and include any relevant booking details so we can help faster.',
+      answer: 'Email us at rideshare.sasup@gmail.com and include any relevant booking details so we can help faster.',
     },
   ];
 
@@ -162,7 +162,7 @@ export default function FAQ() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Support"
+              href="mailto:rideshare.sasup@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Support"
               className="btn-primary"
             >
               Email Support

@@ -10,7 +10,7 @@ export default function Contact() {
     message: '',
   });
 
-  const phiweEmail = 'phiwetoni3@gmail.com';
+  const phiweEmail = 'rideshare.sasup@gmail.com';
 
   const subjectLabel = (value: string) => {
     switch (value) {
@@ -59,7 +59,7 @@ export default function Contact() {
   const contactInfo = [
     {
       title: 'Email Support',
-      details: 'phiwetoni3@gmail.com',
+      details: 'rideshare.sasup@gmail.com',
       description: 'General inquiries and support',
       icon: <Mail size={24} />,
     },
@@ -238,7 +238,7 @@ export default function Contact() {
               <p className="text-gray-600 mb-4">
                 For companies that need regular vehicle access, email us to discuss options and availability.
               </p>
-              <a href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Corporate%20Accounts" className="text-primary-600 font-semibold hover:text-primary-700">
+              <a href="mailto:rideshare.sasup@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Corporate%20Accounts" className="text-primary-600 font-semibold hover:text-primary-700">
                 Email us →
               </a>
             </div>
@@ -249,7 +249,7 @@ export default function Contact() {
               <p className="text-gray-600 mb-4">
                 Own multiple vehicles? Join our fleet partner program and maximize your earning potential with dedicated support.
               </p>
-              <a href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Fleet%20Partnership" className="text-primary-600 font-semibold hover:text-primary-700">
+              <a href="mailto:rideshare.sasup@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Fleet%20Partnership" className="text-primary-600 font-semibold hover:text-primary-700">
                 Email us →
               </a>
             </div>
@@ -260,7 +260,7 @@ export default function Contact() {
               <p className="text-gray-600 mb-4">
                 For media inquiries, press releases, and interview requests, please contact our communications team.
               </p>
-              <a href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Media%20Inquiry" className="text-primary-600 font-semibold hover:text-primary-700">
+              <a href="mailto:rideshare.sasup@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Media%20Inquiry" className="text-primary-600 font-semibold hover:text-primary-700">
                 Email us →
               </a>
             </div>
@@ -271,7 +271,7 @@ export default function Contact() {
               <p className="text-gray-600 mb-4">
                 Interested in learning more about RideShare SA? Send us an email and we’ll respond with the right info.
               </p>
-              <a href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Investor%20Relations" className="text-primary-600 font-semibold hover:text-primary-700">
+              <a href="mailto:rideshare.sasup@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Investor%20Relations" className="text-primary-600 font-semibold hover:text-primary-700">
                 Email us →
               </a>
             </div>
