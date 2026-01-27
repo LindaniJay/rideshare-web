@@ -42,7 +42,7 @@ const teamMembers: TeamMember[] = [
     bio: "CTO focused on building a secure, scalable platform and a smooth product experience for hosts and renters.",
     image: anelithaImage,
     imageObjectPosition: '50% 20%',
-    linkedin: "https://www.linkedin.com/mwlite/profile/in/anelitha-lubedu-1723942a2/",
+    linkedin: "https://www.linkedin.com/in/anelitha-lubedu-1723942a2",
     email: "anelithalubedu1@gmail.com"
   },
   {
