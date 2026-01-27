@@ -7,7 +7,7 @@ export default function ForRenters() {
       title: 'Weekend Getaways',
       description: 'Perfect for spontaneous weekend trips to the coast or mountains.',
       icon: <MapPin size={24} />,
-      example: 'Johannesburg to Durban weekend trip',
+      example: 'Cape Town to Stellenbosch weekend trip',
     },
     {
       title: 'Business Travel',
@@ -37,7 +37,7 @@ export default function ForRenters() {
     },
     {
       title: 'Better Prices',
-      description: 'Save up to 50% compared to traditional rental agencies.',
+      description: 'Often more flexible and affordable than traditional rental options.',
       icon: <DollarSign size={32} />,
     },
     {
@@ -54,13 +54,13 @@ export default function ForRenters() {
 
   const whatToExpect = [
     {
-      title: 'Clean, Well-Maintained Cars',
-      description: 'All vehicles are inspected and maintained by verified owners.',
+      title: 'Clear vehicle details',
+      description: 'Photos, key specs, and expectations are shown upfront before you book.',
       icon: <Car size={20} />,
     },
     {
       title: 'Verified Hosts',
-      description: 'Every host passes our comprehensive verification process.',
+      description: 'Host profiles and verification status (where applicable) help you decide with confidence.',
       icon: <Shield size={20} />,
     },
     {
@@ -69,8 +69,8 @@ export default function ForRenters() {
       icon: <DollarSign size={20} />,
     },
     {
-      title: '24/7 Support',
-      description: 'Help is always available when you need it.',
+      title: 'Support',
+      description: 'Need help? Email us with your booking details and we’ll assist.',
       icon: <Users size={20} />,
     },
   ];
@@ -101,8 +101,21 @@ export default function ForRenters() {
   return (
     <div>
       {/* Header */}
-      <section className="bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-70 motion-safe:block motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
             For Renters
           </h1>
@@ -145,7 +158,7 @@ export default function ForRenters() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
-              Why Renters Choose RideShareX
+              Why Renters Choose RideShare SA
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Experience the future of car rental
@@ -226,7 +239,7 @@ export default function ForRenters() {
       {/* CTA Banner */}
       <CTABanner
         title="Find your next ride"
-        subtitle="Browse hundreds of available cars across South Africa."
+        subtitle="Browse cars available in Cape Town now — more cities coming soon."
         buttonText="Find Your Next Ride"
       />
     </div>

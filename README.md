@@ -1,13 +1,13 @@
 # RideShare SA Website
 
-A standalone, modern marketing website for RideShare SA - South Africa's premier peer-to-peer car rental platform.
+A standalone, modern marketing website for RideShare SA — a peer-to-peer car rental marketplace.
 
 ## Overview
 
 This is a production-ready marketing website showcasing the RideShare SA platform with:
 - **Modern, responsive design** with pill-shaped navigation
 - **Enhanced user experience** with animations and micro-interactions
-- **Complete branding** as "RideShare SA" (not RideShareX)
+- **Consistent branding** as "RideShare SA"
 - **Multi-page navigation** with comprehensive content sections
 - **Mobile-optimized** design with touch-friendly interfaces
 
@@ -15,7 +15,7 @@ This is a production-ready marketing website showcasing the RideShare SA platfor
 
 - **Modern, responsive design** matching RideShare SA brand colors and typography
 - **Multi-page navigation**: Home, How It Works, For Renters, For Hosts, Safety, FAQ, Contact
-- **Configurable platform URL**: All "Go to Platform" CTAs link to `VITE_PLATFORM_URL` (defaults to `https://app.rideshare-sa.co.za`)
+- **Coming Soon flow**: All "Go to Platform" CTAs route to `/coming-soon` while the platform is in pre-launch
 - **Mobile-friendly navigation** with hamburger menu
 - **Reusable components**: Navbar, Footer, FAQ accordion, CTA banners
 - **Glass-morphism design** with subtle backdrop blur effects
@@ -44,7 +44,7 @@ Create a `.env` file in the root:
 VITE_PLATFORM_URL=https://app.rideshare-sa.co.za
 ```
 
-If not set, defaults to `https://app.rideshare-sa.co.za`.
+Note: the marketing site currently routes platform CTAs to `/coming-soon`. You can still set `VITE_PLATFORM_URL` for future use.
 
 ## Build
 
@@ -58,13 +58,13 @@ Outputs to `dist/` directory, ready for deployment.
 
 ### Vercel (Recommended)
 
-1. Connect the `marketing/` folder to Vercel
+1. Connect the repository to Vercel
 2. Set environment variable: `VITE_PLATFORM_URL=https://app.rideshare-sa.co.za`
 3. Deploy automatically on git push
 
 ### Netlify
 
-1. Connect the `marketing/` folder to Netlify
+1. Connect the repository to Netlify
 2. Set environment variable: `VITE_PLATFORM_URL=https://app.rideshare-sa.co.za`
 3. Build command: `npm run build`
 4. Publish directory: `dist`
@@ -83,13 +83,18 @@ Outputs to `dist/` directory, ready for deployment.
 
 ## Pages
 
-- **Home** (`/`): Hero, how it works, benefits, testimonials, stats
+- **Home** (`/`): Hero, how it works, benefits, community, stats
 - **How It Works** (`/how-it-works`): Step-by-step flows for renters and hosts
 - **For Renters** (`/for-renters`): Use cases, benefits, getting started
 - **For Hosts** (`/for-hosts`): Earnings potential, safety features, FAQs
 - **Safety** (`/safety`): Verification process, safety features, emergency info
 - **FAQ** (`/faq`): Organized by renters, hosts, and general questions
 - **Contact** (`/contact`): Contact form, business inquiries, support info
+
+## Notes
+
+- **Current availability:** Cape Town (expanding to other cities soon).
+- **Contact forms:** use `mailto:` links (no backend) to email Phiwe Toni.
 
 ## Customization
 

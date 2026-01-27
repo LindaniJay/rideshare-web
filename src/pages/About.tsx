@@ -1,34 +1,33 @@
 import { ArrowRight, Target, Users, Globe, Heart, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { PLATFORM_URL } from '../config/platform';
 import Team from '../components/Team';
 
 export default function About() {
   const milestones = [
     {
-      year: "2020",
-      title: "The Beginning",
-      description: "Founded with a vision to transform car rental in South Africa through peer-to-peer sharing."
+      year: "Now",
+      title: "Starting in Cape Town",
+      description: "Launching city-by-city, beginning with Cape Town — built around trust, safety, and local community."
     },
     {
-      year: "2021",
-      title: "Platform Launch",
-      description: "Launched our MVP with 100 cars and 1,000 users across Johannesburg and Cape Town."
+      year: "Next",
+      title: "Growing supply & demand",
+      description: "Bringing more hosts and renters onto the platform, improving the booking experience, and strengthening trust features."
     },
     {
-      year: "2022",
-      title: "Expansion",
-      description: "Grew to 5 major cities, 500+ cars, and secured Series A funding."
+      year: "Soon",
+      title: "Expanding to more cities",
+      description: "Rolling out to additional South African cities with better selection, improved tools, and faster support."
     },
     {
-      year: "2023",
-      title: "Innovation",
-      description: "Introduced AI-powered pricing and enhanced safety features."
+      year: "Ongoing",
+      title: "Improving the product",
+      description: "Continuously refining safety, verification, and the end-to-end rental experience based on community feedback."
     },
     {
-      year: "2024",
-      title: "National Coverage",
-      description: "Expanded to 15 cities with 10,000+ active users and 500+ available cars."
+      year: "Future",
+      title: "Scaling nationally",
+      description: "Building toward a nationwide peer-to-peer rental marketplace with broader access and more affordable mobility."
     }
   ];
 
@@ -58,24 +57,35 @@ export default function About() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 to-primary-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center motion-safe:block motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">
             About RideShare SA
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Revolutionizing car rental in South Africa through innovative peer-to-peer sharing
+            Making car rentals simpler through trusted peer-to-peer rentals
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={PLATFORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary bg-white text-primary-500 hover:bg-gray-100 inline-flex items-center justify-center"
+            <Link
+              to="/coming-soon"
+              className="btn-primary bg-none bg-white text-primary-600 hover:bg-gray-100 inline-flex items-center justify-center"
             >
               Try Our Platform
               <ArrowRight className="ml-2" size={20} />
-            </a>
+            </Link>
             <Link
               to="/contact"
               className="btn-outline border-white text-white hover:bg-white hover:text-primary-500 inline-flex items-center justify-center"
@@ -100,13 +110,13 @@ export default function About() {
                   that sit idle for 95% of the time, while many people need affordable transportation options.
                 </p>
                 <p>
-                  Founded in 2020 by Lindani Jay and Thabo Mokoena, we set out to create a platform that 
-                  would connect car owners with people who need vehicles, making transportation more 
-                  accessible, affordable, and sustainable.
+                  In 2025, our team started building RideShare SA to connect car owners
+                  with people who need vehicles — making transportation more accessible, affordable, and
+                  sustainable.
                 </p>
                 <p>
-                  Today, we're proud to be South Africa's leading peer-to-peer car rental platform, 
-                  serving thousands of users across 15 cities and counting.
+                  We're starting in Cape Town and expanding into other cities as we grow our community of
+                  hosts and renters.
                 </p>
               </div>
             </div>
@@ -119,7 +129,7 @@ export default function About() {
               </div>
               <p className="text-gray-600 text-center leading-relaxed">
                 To democratize car ownership in South Africa by creating a trusted platform that 
-                enables people to share vehicles safely, affordably, and conveniently, while building 
+                enables peer-to-peer car rentals safely, affordably, and conveniently, while building 
                 sustainable communities and reducing transportation costs for all South Africans.
               </p>
             </div>
@@ -198,15 +208,13 @@ export default function About() {
             Whether you're looking to rent a car or share yours, we're here to help you get started.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={PLATFORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary bg-white text-primary-500 hover:bg-gray-100 inline-flex items-center justify-center"
+            <Link
+              to="/coming-soon"
+              className="btn-primary bg-none bg-white text-primary-600 hover:bg-gray-100 inline-flex items-center justify-center"
             >
               Get Started Now
               <ArrowRight className="ml-2" size={20} />
-            </a>
+            </Link>
             <Link
               to="/contact"
               className="btn-outline border-white text-white hover:bg-white hover:text-primary-500 inline-flex items-center justify-center"

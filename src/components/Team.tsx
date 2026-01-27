@@ -1,10 +1,16 @@
 import { Linkedin, Mail, Twitter } from 'lucide-react';
+import phiweImage from '../assets/Phiwe.jpeg';
+import lindaniImage from '../assets/Lindani.jpeg';
+import anelithaImage from '../assets/anelitha.jpeg';
+import sosoImage from '../assets/Soso.jpeg';
 
 interface TeamMember {
   name: string;
   role: string;
   bio: string;
   image: string;
+  imageObjectPosition?: string;
+  imageScale?: number;
   linkedin?: string;
   email?: string;
   twitter?: string;
@@ -12,54 +18,41 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Lindani Jay",
+    name: "Phiwe Toni",
     role: "CEO & Founder",
-    bio: "Visionary leader with extensive experience in tech and transportation. Passionate about creating sustainable mobility solutions for South Africa.",
-    image: "/api/placeholder/300/300",
-    linkedin: "#",
-    email: "lindani@rideshare-sa.co.za",
-    twitter: "#"
+    bio: "Founder of RideShare SA. Focused on building a trusted, locally-built peer-to-peer car rental platform for South Africa.",
+    image: phiweImage,
+    imageObjectPosition: '50% 20%',
+    linkedin: "https://www.linkedin.com/in/phiwe-toni-90b3b323a",
+    email: "phiwetoni3@gmail.com",
   },
   {
-    name: "Thabo Mokoena",
-    role: "CTO & Co-Founder",
-    bio: "Full-stack developer specializing in scalable platforms. Expert in mobile app development and cloud architecture.",
-    image: "/api/placeholder/300/300",
-    linkedin: "#",
-    email: "thabo@rideshare-sa.co.za"
+    name: "Lindani Jonase",
+    role: "Co-Founder & Lead Developer",
+    bio: "Co-founder and lead developer focused on building a reliable, scalable platform for hosts and renters.",
+    image: lindaniImage,
+    imageObjectPosition: '50% 20%',
+    imageScale: 1.12,
+    linkedin: "https://www.linkedin.com/in/lindani-jonase-368515304?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRhht5qlmRiWyBJqpPoxyCQ%3D%3D",
+    email: "lindanijonase@gmail.com"
   },
   {
-    name: "Sarah Ndlovu",
-    role: "Head of Operations",
-    bio: "Operations expert with extensive experience in logistics and customer service. Ensures smooth day-to-day operations.",
-    image: "/api/placeholder/300/300",
-    linkedin: "#",
-    email: "sarah@rideshare-sa.co.za"
+    name: "Anelitha Lubedu",
+    role: "CTO",
+    bio: "CTO focused on building a secure, scalable platform and a smooth product experience for hosts and renters.",
+    image: anelithaImage,
+    imageObjectPosition: '50% 20%',
+    linkedin: "https://www.linkedin.com/mwlite/profile/in/anelitha-lubedu-1723942a2/",
+    email: "anelithalubedu1@gmail.com"
   },
   {
-    name: "Michael Chen",
-    role: "Lead Developer",
-    bio: "Senior developer with expertise in mobile and backend systems. Drives technical innovation and platform reliability.",
-    image: "/api/placeholder/300/300",
-    linkedin: "#",
-    email: "michael@rideshare-sa.co.za"
-  },
-  {
-    name: "Priya Sharma",
-    role: "Marketing Director",
-    bio: "Marketing strategist focused on growth and brand development. Expert in digital marketing and community building.",
-    image: "/api/placeholder/300/300",
-    linkedin: "#",
-    email: "priya@rideshare-sa.co.za",
-    twitter: "#"
-  },
-  {
-    name: "David Williams",
+    name: "Sonwabile Banca",
     role: "Head of Finance",
-    bio: "Financial expert with background in fintech and startup scaling. Manages financial strategy and investor relations.",
-    image: "/api/placeholder/300/300",
-    linkedin: "#",
-    email: "david@rideshare-sa.co.za"
+    bio: "Leads financial planning and sustainability to support long-term growth for hosts, renters, and the RideShare SA community.",
+    image: sosoImage,
+    imageObjectPosition: '50% 20%',
+    linkedin: "https://www.linkedin.com/in/sonwabile-banca-51017b20a",
+    email: "sosobanca58@gmail.com"
   }
 ];
 
@@ -72,65 +65,94 @@ export default function Team() {
             Meet Our Team
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            The passionate individuals behind RideShare SA, dedicated to revolutionizing 
-            car rental and sharing across South Africa
+            The people behind RideShare SA, building a trusted peer-to-peer rental experience across South Africa.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
-            <div key={index} className="glass-card p-8 text-center group hover:shadow-xl transition-all duration-300">
-              <div className="mb-6">
-                <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 p-1">
-                  <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary-600">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
+            <div
+              key={index}
+              className="glass-card group relative overflow-hidden p-6 sm:p-7 text-left hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                className="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-primary-500/15 via-primary-400/10 to-primary-700/10"
+                aria-hidden="true"
+              />
+
+              <div className="relative flex items-center gap-4">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white/70 ring-1 ring-gray-200 shadow-sm">
+                  {member.image && !member.image.startsWith('/api/placeholder') ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full rounded-2xl object-cover"
+                      style={{
+                        objectPosition: member.imageObjectPosition ?? '50% 50%',
+                        transform: `scale(${member.imageScale ?? 1})`,
+                        transformOrigin: 'center',
+                      }}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full rounded-2xl bg-gray-100 flex items-center justify-center">
+                      <span className="text-lg font-bold text-primary-600">
+                        {member.name.split(' ').map((n) => n[0]).join('')}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                <div className="min-w-0">
+                  <h3 className="text-lg sm:text-xl font-semibold font-heading text-gray-900 leading-tight">
+                    {member.name}
+                  </h3>
+                  <p className="text-primary-700 font-medium mt-1">{member.role}</p>
                 </div>
               </div>
-              
-              <h3 className="text-xl font-semibold font-heading text-gray-900 mb-2">
-                {member.name}
-              </h3>
-              
-              <p className="text-primary-600 font-medium mb-4">
-                {member.role}
-              </p>
-              
-              <p className="text-gray-600 mb-6 leading-relaxed">
+
+              <p className="relative text-gray-600 mt-5 leading-relaxed">
                 {member.bio}
               </p>
-              
-              <div className="flex justify-center space-x-3">
-                {member.linkedin && (
+
+              <div className="relative mt-6 flex items-center gap-3">
+                {member.linkedin && member.linkedin !== '#' && (
                   <a
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-primary-500 transition-colors"
+                    aria-label={`${member.name} on LinkedIn`}
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-gray-200 bg-white/70 text-gray-600 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-700 transition-colors"
                   >
-                    <Linkedin size={20} />
+                    <Linkedin size={18} />
                   </a>
                 )}
                 {member.email && (
                   <a
                     href={`mailto:${member.email}`}
-                    className="text-gray-400 hover:text-primary-500 transition-colors"
+                    aria-label={`Email ${member.name}`}
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-gray-200 bg-white/70 text-gray-600 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-700 transition-colors"
                   >
-                    <Mail size={20} />
+                    <Mail size={18} />
                   </a>
                 )}
-                {member.twitter && (
+                {member.twitter && member.twitter !== '#' && (
                   <a
                     href={member.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-primary-500 transition-colors"
+                    aria-label={`${member.name} on Twitter`}
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-gray-200 bg-white/70 text-gray-600 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-700 transition-colors"
                   >
-                    <Twitter size={20} />
+                    <Twitter size={18} />
                   </a>
                 )}
+
+                <div className="ml-auto hidden sm:block text-xs text-gray-500">
+                  <span className="inline-flex items-center rounded-full border border-gray-200 bg-white/60 px-3 py-1">
+                    Verified profile
+                  </span>
+                </div>
               </div>
             </div>
           ))}
@@ -142,12 +164,11 @@ export default function Team() {
               Join Our Mission
             </h3>
             <p className="text-gray-600 mb-6">
-              We're always looking for talented individuals who share our vision for 
-              transforming transportation in South Africa. If you're passionate about 
-              innovation and want to make a difference, we'd love to hear from you.
+              We're building a better way to rent cars locally. If you're passionate about product,
+              operations, or trust & safety, we'd love to hear from you.
             </p>
             <a
-              href="mailto:careers@rideshare-sa.co.za"
+              href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Careers"
               className="btn-primary inline-flex items-center"
             >
               Explore Career Opportunities

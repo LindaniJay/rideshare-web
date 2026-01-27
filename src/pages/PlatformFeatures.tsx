@@ -1,44 +1,43 @@
-import { ArrowRight, Car, Search, Smartphone, Shield, CreditCard, MapPin, Users, Star, DollarSign, CheckCircle, FileText, MessageSquare, TrendingUp, Award, Zap, Lock, Globe, HeadphonesIcon } from 'lucide-react';
+import { ArrowRight, Car, Search, Shield, CreditCard, MapPin, Users, DollarSign, CheckCircle, MessageSquare, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { PLATFORM_URL } from '../config/platform';
 
 export default function PlatformFeatures() {
   const coreFeatures = [
     {
       icon: <Car size={32} />,
       title: "Vehicle Management",
-      description: "Comprehensive vehicle listing system with photos, specifications, availability calendars, and real-time status updates.",
-      features: ["Photo galleries", "Detailed specifications", "Availability calendar", "Real-time status"]
+      description: "List vehicles with photos, key details, and availability — so renters can find the right match fast.",
+      features: ["Photo galleries", "Key vehicle details", "Availability", "Clear pickup details"]
     },
     {
       icon: <Search size={32} />,
       title: "Advanced Search",
-      description: "Powerful search functionality with filters for location, dates, vehicle type, price range, and specific requirements.",
-      features: ["Location-based search", "Date availability", "Vehicle categories", "Price filtering"]
+      description: "Find cars by location, dates, and needs — designed for quick decision-making.",
+      features: ["Location search", "Date filters", "Vehicle categories", "Clear pricing"]
     },
     {
       icon: <MapPin size={32} />,
       title: "Interactive Maps",
-      description: "Integrated mapping system showing vehicle locations, pickup points, and coverage areas across South Africa.",
-      features: ["Live location tracking", "Coverage areas", "Pickup points", "Route planning"]
+      description: "See pickup areas and meet-up locations in a way that keeps coordination simple.",
+      features: ["Pickup areas", "Meet-up points", "Local availability", "Clear directions"]
     },
     {
       icon: <CreditCard size={32} />,
       title: "Secure Payments",
-      description: "Multiple payment options including Stripe, PayFast, with secure processing and instant confirmations.",
-      features: ["Stripe integration", "PayFast support", "Secure processing", "Instant confirmation"]
+      description: "Payments are handled through the platform to keep bookings clear and accountable.",
+      features: ["Secure checkout", "Transparent pricing", "Receipts", "Clear cancellation rules"]
     },
     {
       icon: <Shield size={32} />,
       title: "Safety & Verification",
-      description: "Multi-layer verification system for users and vehicles, including ID verification, vehicle inspections, and insurance coverage.",
-      features: ["ID verification", "Vehicle inspections", "Insurance coverage", "Background checks"]
+      description: "Trust-first onboarding and clear rules designed to keep hosts and renters protected.",
+      features: ["Identity checks", "License checks", "Clear policies", "Support when needed"]
     },
     {
       icon: <MessageSquare size={32} />,
       title: "Real-time Communication",
-      description: "In-app messaging system between renters and hosts, with notifications and chat history.",
-      features: ["In-app messaging", "Push notifications", "Chat history", "File sharing"]
+      description: "Message hosts and renters to confirm pickup details, handover, and questions.",
+      features: ["Messaging", "Pickup coordination", "Clear expectations", "Issue reporting"]
     }
   ];
 
@@ -46,104 +45,90 @@ export default function PlatformFeatures() {
     {
       icon: <Users size={32} />,
       title: "User Profiles",
-      description: "Comprehensive user profiles with verification status, reviews, ratings, and rental history.",
-      features: ["Verification badges", "Review system", "Rental history", "Profile customization"]
+      description: "Profiles help both sides understand who they're dealing with and what to expect.",
+      features: ["Verification status", "Basic profile details", "Clear rules", "Help & support"]
     },
     {
-      icon: <Star size={32} />,
-      title: "Rating & Reviews",
-      description: "Two-way rating system with detailed reviews, photos, and feedback for continuous improvement.",
-      features: ["Two-way ratings", "Detailed reviews", "Photo feedback", "Quality assurance"]
+      icon: <Shield size={32} />,
+      title: "Trust & Support",
+      description: "A platform built around clear policies, verification, and support — without relying on hype.",
+      features: ["Verification-first", "Clear policies", "Issue escalation", "Customer support"]
     },
     {
-      icon: <Award size={32} />,
-      title: "Loyalty Program",
-      description: "Rewards system for frequent users with discounts, priority access, and exclusive benefits.",
-      features: ["Points system", "Tier rewards", "Exclusive discounts", "Priority booking"]
+      icon: <DollarSign size={32} />,
+      title: "Host Earnings",
+      description: "Hosts can track earnings and plan availability around their schedule.",
+      features: ["Earnings visibility", "Flexible availability", "Payout tracking", "Pricing guidance"]
     }
   ];
 
   const technicalFeatures = [
     {
-      icon: <Smartphone size={32} />,
-      title: "Mobile Apps",
-      description: "Native iOS and Android apps with full platform functionality, offline support, and push notifications.",
-      features: ["iOS & Android apps", "Offline support", "Push notifications", "Biometric login"]
-    },
-    {
-      icon: <Zap size={32} />,
-      title: "Real-time Updates",
-      description: "Live booking updates, availability changes, and instant notifications for all platform activities.",
-      features: ["Live updates", "Instant notifications", "Real-time sync", "Activity tracking"]
-    },
-    {
       icon: <Lock size={32} />,
       title: "Security & Privacy",
-      description: "Enterprise-grade security with data encryption, GDPR compliance, and privacy controls.",
-      features: ["Data encryption", "GDPR compliance", "Privacy controls", "Security audits"]
+      description: "Designed to protect user data and reduce fraud risks.",
+      features: ["Secure handling", "Privacy-first", "Abuse prevention", "Account controls"]
     },
     {
-      icon: <Globe size={32} />,
-      title: "Scalable Infrastructure",
-      description: "Cloud-based architecture with auto-scaling, CDN integration, and 99.9% uptime guarantee.",
-      features: ["Auto-scaling", "CDN integration", "99.9% uptime", "Global deployment"]
+      icon: <Shield size={32} />,
+      title: "Verification-first",
+      description: "Trust and verification are central to how the marketplace operates.",
+      features: ["Identity checks", "License checks", "Clear handover rules", "Support"]
     }
   ];
 
   const businessFeatures = [
     {
-      icon: <TrendingUp size={32} />,
-      title: "Analytics Dashboard",
-      description: "Comprehensive analytics for hosts and administrators with insights, trends, and performance metrics.",
-      features: ["Revenue tracking", "Usage analytics", "Performance metrics", "Custom reports"]
-    },
-    {
       icon: <DollarSign size={32} />,
-      title: "Dynamic Pricing",
-      description: "AI-powered pricing optimization based on demand, seasonality, location, and market trends.",
-      features: ["AI optimization", "Demand pricing", "Seasonal adjustments", "Market analysis"]
+      title: "Host Tools",
+      description: "Simple tools to help hosts price, schedule, and manage bookings.",
+      features: ["Availability", "Pricing guidance", "Earnings tracking", "Booking management"]
     },
     {
-      icon: <FileText size={32} />,
-      title: "Automated Paperwork",
-      description: "Digital contracts, agreements, and document management with e-signature capabilities.",
-      features: ["Digital contracts", "E-signatures", "Document storage", "Automated generation"]
-    },
-    {
-      icon: <HeadphonesIcon size={32} />,
-      title: "24/7 Support",
-      description: "Round-the-clock customer support with live chat, phone support, and comprehensive help center.",
-      features: ["24/7 availability", "Live chat", "Phone support", "Help center"]
+      icon: <MessageSquare size={32} />,
+      title: "Support & Resolution",
+      description: "Clear communication and a path to resolve issues if something goes wrong.",
+      features: ["In-platform messaging", "Documentation", "Issue escalation", "Email support"]
     }
   ];
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 to-primary-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center motion-safe:block motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">
             Platform Features
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Discover the comprehensive features that make RideShare SA the leading 
-            peer-to-peer car rental platform in South Africa
+            A clear look at how RideShare SA supports peer-to-peer car rentals — starting in Cape Town.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={PLATFORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/coming-soon"
               className="btn-primary bg-white text-primary-500 hover:bg-gray-100 inline-flex items-center justify-center"
             >
-              Try Platform Features
+              Go to Platform
               <ArrowRight className="ml-2" size={20} />
-            </a>
+            </Link>
             <Link
               to="/contact"
               className="btn-outline border-white text-white hover:bg-white hover:text-primary-500 inline-flex items-center justify-center"
             >
-              Request Demo
+              Join our community
             </Link>
           </div>
         </div>
@@ -223,13 +208,13 @@ export default function PlatformFeatures() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
-              Technical Excellence
+              Built for trust
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Built with cutting-edge technology for reliability, security, and performance
+              Practical choices focused on safety, privacy, and a smooth rental experience.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {technicalFeatures.map((feature, index) => (
               <div key={index} className="glass-card p-6 text-center">
                 <div className="text-primary-500 mb-4">{feature.icon}</div>
@@ -255,10 +240,10 @@ export default function PlatformFeatures() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
-              Business & Analytics
+              Host-friendly tools
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Powerful tools to grow your business and optimize operations
+              Designed to help hosts manage rentals confidently.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -287,63 +272,28 @@ export default function PlatformFeatures() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-primary-500 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-heading mb-4">
-              Platform Performance
-            </h2>
-            <p className="text-primary-100">
-              Real numbers from our production platform
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl md:text-4xl font-bold font-heading mb-2">99.9%</div>
-              <div className="text-primary-100">Uptime</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold font-heading mb-2">&lt;200ms</div>
-              <div className="text-primary-100">Response Time</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold font-heading mb-2">256-bit</div>
-              <div className="text-primary-100">Encryption</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold font-heading mb-2">24/7</div>
-              <div className="text-primary-100">Monitoring</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="section-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
-            Ready to Experience These Features?
+            Ready to get started?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join thousands of South Africans who are already using our platform 
-            to rent and share cars safely and conveniently.
+            Join the RideShare SA community in Cape Town — and help shape the rollout to new cities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={PLATFORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/coming-soon"
               className="btn-primary inline-flex items-center justify-center"
             >
-              Start Using Platform
+              Go to Platform
               <ArrowRight className="ml-2" size={20} />
-            </a>
+            </Link>
             <Link
               to="/contact"
               className="btn-outline inline-flex items-center justify-center"
             >
-              Schedule Demo
+              Contact us
             </Link>
           </div>
         </div>

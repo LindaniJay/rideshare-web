@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Car, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { PLATFORM_URL } from '../config/platform';
+import brandLogo from '../assets/ChatGPT Image Jan 27, 2026, 09_43_18 AM.png';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -47,15 +47,20 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="group flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <Car className="text-white" size={24} />
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-white/10 ring-1 ring-white/20 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <img
+                  src={brandLogo}
+                  alt="RideShare SA logo"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
               </div>
               <div>
                 <div className="text-2xl font-bold text-white font-heading group-hover:text-primary-400 transition-colors">
                   RideShare SA
                 </div>
                 <div className="text-xs text-gray-300 font-body tracking-wide">
-                  South Africa's Premier Car Sharing
+                  Peer-to-peer car rentals
                 </div>
               </div>
             </Link>
@@ -109,15 +114,13 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <a
-                href={PLATFORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/coming-soon"
                 className="group bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center space-x-2"
               >
                 <span>Go to Platform</span>
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
-              </a>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -177,16 +180,14 @@ export default function Navbar() {
 
                 {/* Mobile CTA */}
                 <div className="px-4">
-                  <a
-                    href={PLATFORM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/coming-soon"
                     className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <span>Go to Platform</span>
                     <ArrowRight size={18} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

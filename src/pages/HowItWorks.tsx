@@ -22,10 +22,10 @@ export default function HowItWorks() {
       details: ['Flexible pickup locations', 'Host verification process', 'Car inspection checklist'],
     },
     {
-      title: 'Return & Review',
-      description: 'Return the car as agreed and share your experience to help the community.',
+      title: 'Return the Car',
+      description: 'Return the car as agreed and close out the booking smoothly.',
       icon: <Clock size={24} />,
-      details: ['Easy return process', 'Rate your experience', 'Build trust in the community'],
+      details: ['Easy return process', 'Simple handover checklist', 'Support if anything goes wrong'],
     },
   ];
 
@@ -59,13 +59,8 @@ export default function HowItWorks() {
   const safetyFeatures = [
     {
       title: 'Identity Verification',
-      description: 'All renters and hosts must verify their identity with official documents.',
+      description: 'Verification-first onboarding helps build trust between renters and hosts.',
       icon: <Shield size={24} />,
-    },
-    {
-      title: 'Vehicle Inspections',
-      description: 'Regular vehicle inspections ensure cars meet safety standards.',
-      icon: <Car size={24} />,
     },
     {
       title: 'Secure Payments',
@@ -73,29 +68,37 @@ export default function HowItWorks() {
       icon: <CreditCard size={24} />,
     },
     {
-      title: 'Reviews & Ratings',
-      description: 'Build trust through transparent reviews and ratings from the community.',
+      title: 'Trust & Support',
+      description: 'Trust checks, clear policies, and support to help keep both sides safe.',
       icon: <Users size={24} />,
     },
     {
-      title: '24/7 Support',
-      description: 'Our support team is available around the clock for assistance.',
-      icon: <Clock size={24} />,
-    },
-    {
-      title: 'Insurance Coverage',
-      description: 'Comprehensive insurance coverage for peace of mind during rentals.',
-      icon: <Shield size={24} />,
+      title: 'Clear Handover',
+      description: 'Clear pickup/return expectations help reduce misunderstandings.',
+      icon: <Car size={24} />,
     },
   ];
 
   return (
     <div>
       {/* Header */}
-      <section className="bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-70 motion-safe:block motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-            How RideShareX Works
+            How RideShare SA Works
           </h1>
           <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
             Learn how easy it is to rent cars or earn money as a host on our platform
@@ -225,8 +228,8 @@ export default function HowItWorks() {
       {/* CTA Banner */}
       <CTABanner
         title="Ready to get started?"
-        subtitle="Join thousands of South Africans renting and sharing cars safely."
-        buttonText="Go to RideShareX Platform"
+        subtitle="Join South Africans renting cars from trusted local owners."
+        buttonText="Go to RideShare SA Platform"
       />
     </div>
   );

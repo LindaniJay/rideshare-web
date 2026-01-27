@@ -4,9 +4,77 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RideShare SA - South Africa's Premier Car Sharing Platform</title>
+    <title>RideShare SA - Peer-to-Peer Car Rentals in Cape Town</title>
+
+
+
+
+
+
+
+
+    <style>
+      /* Pre-React initial loader (keeps the page from looking blank while JS loads). */
+      #app-initial-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        background: #f9fafb; /* tailwind gray-50 */
+        transition: opacity 200ms ease;
+      }
+
+      #app-initial-loader.app-loader--hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #app-initial-loader .app-loader__logo {
+        width: 96px;
+        height: 96px;
+        border-radius: 9999px;
+        object-fit: cover;
+        animation: app-logo-spin 900ms linear infinite;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      @keyframes app-logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #app-initial-loader .app-loader__logo {
+          animation: none;
+        }
+      }
+    </style>
   </head>
   <body>
+
+
+
+
+
+
+    <div
+      id="app-initial-loader"
+      role="status"
+      aria-label="Loading RideShare SA"
+      aria-live="polite"
+      aria-busy="true"
+    >
+      <img
+        class="app-loader__logo"
+        src="/src/assets/ChatGPT%20Image%20Jan%2027,%202026,%2009_43_18%20AM.png"
+        alt="RideShare SA logo"
+      />
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

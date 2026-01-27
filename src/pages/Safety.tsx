@@ -1,31 +1,31 @@
-import { Shield, CheckCircle, AlertCircle, Users, Car, FileText, Phone, Mail, Lock } from 'lucide-react';
+import { Shield, CheckCircle, AlertCircle, Users, Car, FileText, Mail, Lock } from 'lucide-react';
 import CTABanner from '../components/CTABanner';
 
 export default function Safety() {
   const verificationSteps = [
     {
       title: 'Identity Verification',
-      description: 'Government-issued ID verification for all users.',
+      description: 'Identity checks help build trust between renters and hosts.',
       icon: <FileText size={24} />,
-      details: ['South African ID or passport', 'Facial recognition matching', 'Address verification'],
+      details: ['South African ID or passport (where required)', 'Basic profile details', 'Clear contact and booking info'],
     },
     {
       title: 'Driver\'s License Check',
-      description: 'Valid driver\'s license verification for all renters.',
+      description: 'Driver\'s license details are used to help ensure eligible rentals.',
       icon: <Car size={24} />,
-      details: ['License authenticity check', 'Driving record verification', 'License expiry monitoring'],
+      details: ['Valid driver\'s license (where required)', 'License expiry checks', 'Clear eligibility requirements'],
     },
     {
       title: 'Vehicle Documentation',
-      description: 'Complete vehicle registration and insurance verification.',
+      description: 'Basic vehicle documents help ensure listings are legitimate.',
       icon: <Shield size={24} />,
-      details: ['Vehicle registration papers', 'Insurance policy verification', 'Roadworthy certificate'],
+      details: ['Vehicle registration (where applicable)', 'Listing photos and details', 'Clear condition expectations'],
     },
     {
       title: 'Profile Review',
-      description: 'Manual review of all profiles by our safety team.',
+      description: 'We focus on quality and safety signals that reduce bad experiences.',
       icon: <Users size={24} />,
-      details: ['Background checks', 'Profile completeness', 'Manual approval process'],
+      details: ['Profile completeness', 'Fraud prevention checks', 'Policy enforcement'],
     },
   ];
 
@@ -37,28 +37,10 @@ export default function Safety() {
       category: 'Financial Security',
     },
     {
-      title: 'Insurance Coverage',
-      description: 'Comprehensive insurance coverage for all rentals during the rental period.',
-      icon: <Shield size={32} />,
-      category: 'Protection',
-    },
-    {
-      title: '24/7 Support',
-      description: 'Round-the-clock customer support for emergencies and assistance.',
-      icon: <Phone size={32} />,
-      category: 'Support',
-    },
-    {
-      title: 'Rating System',
-      description: 'Transparent two-way rating system to build trust in the community.',
+      title: 'Trust & Support',
+      description: 'Clear policies, verification, and support to help keep both sides safe.',
       icon: <Users size={32} />,
       category: 'Trust',
-    },
-    {
-      title: 'GPS Tracking',
-      description: 'Optional GPS tracking for added security during rentals.',
-      icon: <Car size={32} />,
-      category: 'Technology',
     },
     {
       title: 'Dispute Resolution',
@@ -95,21 +77,9 @@ export default function Safety() {
 
   const emergencyInfo = [
     {
-      title: 'Roadside Assistance',
-      description: '24/7 roadside assistance available for all rentals.',
-      contact: '0800 RIDE SA (0800 7433 72)',
-      icon: <Car size={20} />,
-    },
-    {
-      title: 'Emergency Support',
-      description: 'For urgent safety concerns or emergencies.',
-      contact: '0800 SAFE SA (0800 7233 72)',
-      icon: <Phone size={20} />,
-    },
-    {
       title: 'Email Support',
       description: 'Non-urgent inquiries and documentation.',
-      contact: 'safety@ridesharex.co.za',
+      contact: 'phiwetoni3@gmail.com',
       icon: <Mail size={20} />,
     },
   ];
@@ -117,8 +87,21 @@ export default function Safety() {
   return (
     <div>
       {/* Header */}
-      <section className="bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-70 motion-safe:block motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
             Safety & Trust
           </h1>
@@ -230,10 +213,10 @@ export default function Safety() {
               Emergency Information
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Help is always available when you need it
+              If you need help, contact us by email and include booking details.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-xl mx-auto">
             {emergencyInfo.map((info, index) => (
               <div key={index} className="glass-card p-6 text-center">
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -257,11 +240,10 @@ export default function Safety() {
             <Shield size={40} />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold font-heading mb-4">
-            RideShareX Safety Guarantee
+            Safety and trust-first design
           </h2>
           <p className="text-lg opacity-90 mb-6">
-            We're committed to maintaining the safest peer-to-peer car rental platform in South Africa. 
-            Our comprehensive safety measures and dedicated support team ensure that every rental is secure and trustworthy.
+            We build with safety, verification, and clear policies in mind — so both sides can rent with confidence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="flex items-center justify-center space-x-2">
@@ -274,11 +256,11 @@ export default function Safety() {
             </div>
             <div className="flex items-center justify-center space-x-2">
               <CheckCircle size={20} className="text-green-400" />
-              <span>24/7 Support</span>
+              <span>Clear policies</span>
             </div>
             <div className="flex items-center justify-center space-x-2">
               <CheckCircle size={20} className="text-green-400" />
-              <span>Insurance Coverage</span>
+              <span>Email support</span>
             </div>
           </div>
         </div>
@@ -287,8 +269,8 @@ export default function Safety() {
       {/* CTA Banner */}
       <CTABanner
         title="Ready to rent or host safely?"
-        subtitle="Join South Africa's most trusted peer-to-peer car rental platform."
-        buttonText="Go to RideShareX Platform"
+        subtitle="Join a trust-first peer-to-peer car rental marketplace." 
+        buttonText="Go to RideShare SA Platform"
       />
     </div>
   );

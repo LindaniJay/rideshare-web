@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
 import CTABanner from '../components/CTABanner';
 
@@ -10,6 +10,27 @@ export default function Contact() {
     message: '',
   });
 
+  const phiweEmail = 'phiwetoni3@gmail.com';
+
+  const subjectLabel = (value: string) => {
+    switch (value) {
+      case 'general':
+        return 'General Inquiry';
+      case 'support':
+        return 'Technical Support';
+      case 'booking':
+        return 'Booking Issue';
+      case 'payment':
+        return 'Payment Question';
+      case 'partnership':
+        return 'Partnership Inquiry';
+      case 'feedback':
+        return 'Feedback';
+      default:
+        return 'Message';
+    }
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -19,24 +40,28 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real implementation, this would send the form data to a backend service
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message. We\'ll get back to you soon!');
+
+    const subject = `RideShare SA — ${subjectLabel(formData.subject)}`;
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Topic: ${subjectLabel(formData.subject)}`,
+      '',
+      formData.message,
+    ].join('\n');
+
+    const params = new URLSearchParams({ subject, body });
+    window.location.href = `mailto:${phiweEmail}?${params.toString()}`;
+
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   const contactInfo = [
     {
       title: 'Email Support',
-      details: 'support@ridesharex.co.za',
+      details: 'phiwetoni3@gmail.com',
       description: 'General inquiries and support',
       icon: <Mail size={24} />,
-    },
-    {
-      title: 'Phone Support',
-      details: '0800 RIDE SA (0800 7433 72)',
-      description: '24/7 customer support',
-      icon: <Phone size={24} />,
     },
     {
       title: 'Head Office',
@@ -46,17 +71,24 @@ export default function Contact() {
     },
   ];
 
-  const socialLinks = [
-    { name: 'Facebook', icon: <Facebook size={20} />, href: '#' },
-    { name: 'Twitter', icon: <Twitter size={20} />, href: '#' },
-    { name: 'LinkedIn', icon: <Linkedin size={20} />, href: '#' },
-  ];
-
   return (
     <div>
       {/* Header */}
-      <section className="bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-70 motion-safe:block motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
             Contact Us
           </h1>
@@ -195,7 +227,7 @@ export default function Contact() {
               Business & Partnership Inquiries
             </h2>
             <p className="text-xl text-gray-600">
-              Interested in partnering with RideShareX?
+                Interested in partnering with RideShare SA?
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -204,10 +236,10 @@ export default function Contact() {
                 Corporate Accounts
               </h3>
               <p className="text-gray-600 mb-4">
-                Set up a corporate account for your business needs. Get access to our premium fleet, consolidated billing, and priority support.
+                For companies that need regular vehicle access, email us to discuss options and availability.
               </p>
-              <a href="mailto:business@ridesharex.co.za" className="text-primary-600 font-semibold hover:text-primary-700">
-                business@ridesharex.co.za →
+              <a href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Corporate%20Accounts" className="text-primary-600 font-semibold hover:text-primary-700">
+                Email us →
               </a>
             </div>
             <div className="glass-card p-6">
@@ -217,8 +249,8 @@ export default function Contact() {
               <p className="text-gray-600 mb-4">
                 Own multiple vehicles? Join our fleet partner program and maximize your earning potential with dedicated support.
               </p>
-              <a href="mailto:fleet@ridesharex.co.za" className="text-primary-600 font-semibold hover:text-primary-700">
-                fleet@ridesharex.co.za →
+              <a href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Fleet%20Partnership" className="text-primary-600 font-semibold hover:text-primary-700">
+                Email us →
               </a>
             </div>
             <div className="glass-card p-6">
@@ -228,8 +260,8 @@ export default function Contact() {
               <p className="text-gray-600 mb-4">
                 For media inquiries, press releases, and interview requests, please contact our communications team.
               </p>
-              <a href="mailto:media@ridesharex.co.za" className="text-primary-600 font-semibold hover:text-primary-700">
-                media@ridesharex.co.za →
+              <a href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Media%20Inquiry" className="text-primary-600 font-semibold hover:text-primary-700">
+                Email us →
               </a>
             </div>
             <div className="glass-card p-6">
@@ -237,45 +269,21 @@ export default function Contact() {
                 Investor Relations
               </h3>
               <p className="text-gray-600 mb-4">
-                Learn about investment opportunities and company growth. Access our investor portal and documentation.
+                Interested in learning more about RideShare SA? Send us an email and we’ll respond with the right info.
               </p>
-              <a href="mailto:investors@ridesharex.co.za" className="text-primary-600 font-semibold hover:text-primary-700">
-                investors@ridesharex.co.za →
+              <a href="mailto:phiwetoni3@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Investor%20Relations" className="text-primary-600 font-semibold hover:text-primary-700">
+                Email us →
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Media */}
-      <section className="section-light py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold font-heading text-gray-900 mb-6">
-            Follow Us on Social Media
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Stay updated with the latest news, tips, and community stories
-          </p>
-          <div className="flex justify-center space-x-6">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-500 hover:bg-primary-500 hover:text-white transition-colors"
-                aria-label={social.name}
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Banner */}
       <CTABanner
-        title="Need immediate assistance?"
-        subtitle="Our 24/7 support team is ready to help you."
-        buttonText="Call 0800 RIDE SA"
+        title="Ready to get started?"
+        subtitle="Go to the platform or email us with any questions."
+        buttonText="Go to RideShare SA Platform"
       />
     </div>
   );

@@ -9,6 +9,8 @@ import ForHosts from './pages/ForHosts';
 import Safety from './pages/Safety';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import EarningsCalculator from './pages/EarningsCalculator';
+import ComingSoon from './pages/ComingSoon';
 
 import './index.css';
 
@@ -23,9 +25,11 @@ function App() {
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/for-renters" element={<ForRenters />} />
           <Route path="/for-hosts" element={<ForHosts />} />
+          <Route path="/earnings-calculator" element={<EarningsCalculator />} />
           <Route path="/safety" element={<Safety />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/coming-soon" element={<ComingSoon />} />
         </Routes>
       </Layout>
     </Router>

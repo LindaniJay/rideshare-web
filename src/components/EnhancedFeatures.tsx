@@ -1,34 +1,34 @@
-import { Car, Shield, Smartphone, CreditCard, MapPin, Users, DollarSign, Zap, Award, HeadphonesIcon, TrendingUp, CheckCircle } from 'lucide-react';
+import { Car, Shield, CreditCard, MapPin, Users, DollarSign, Zap, Award, CheckCircle, MessageSquare } from 'lucide-react';
 
 export default function EnhancedFeatures() {
   const categories = [
     {
       title: "For Renters",
-      description: "Everything you need for the perfect rental experience",
+      description: "Everything you need for a smooth peer-to-peer rental",
       features: [
         {
           icon: <Car size={32} />,
-          title: "Premium Vehicle Selection",
-          description: "Choose from a wide variety of verified vehicles - from economy cars to luxury SUVs",
+          title: "Browse local cars",
+          description: "Explore cars from nearby owners with clear details and photos so you can book confidently.",
           highlight: "All makes & models"
         },
         {
           icon: <Shield size={32} />,
-          title: "Complete Protection",
-          description: "24/7 roadside assistance and comprehensive insurance coverage",
-          highlight: "Zero risk guarantee"
+          title: "Trust-first rentals",
+          description: "Built around safety, verification, clear policies, and support when you need it.",
+          highlight: "Peace of mind"
         },
         {
-          icon: <Smartphone size={32} />,
-          title: "Digital Experience",
-          description: "Book, manage, and unlock cars entirely from your smartphone",
-          highlight: "Keyless entry"
+          icon: <Zap size={32} />,
+          title: "Simple booking",
+          description: "Reserve in a few steps and coordinate pickup details with the host.",
+          highlight: "Fast to book"
         },
         {
-          icon: <DollarSign size={32} />,
-          title: "Transparent Pricing",
-          description: "No hidden fees. See exactly what you pay before booking",
-          highlight: "Best price guarantee"
+          icon: <CreditCard size={32} />,
+          title: "Clear pricing",
+          description: "Upfront totals with a clean checkout experience and simple receipts.",
+          highlight: "Transparent totals"
         }
       ]
     },
@@ -43,22 +43,22 @@ export default function EnhancedFeatures() {
           highlight: "Passive income"
         },
         {
-          icon: <Shield size={32} />,
-          title: "Full Insurance Coverage",
-          description: "Your car is fully insured during every rental period",
-          highlight: "Comprehensive coverage"
-        },
-        {
           icon: <Users size={32} />,
-          title: "Vetted Renters",
-          description: "All renters undergo ID verification and background checks",
-          highlight: "Verified community"
+          title: "Control your availability",
+          description: "Set availability around your schedule and decide when your car is listed.",
+          highlight: "You stay in control"
         },
         {
-          icon: <TrendingUp size={32} />,
-          title: "Smart Pricing",
-          description: "AI-powered pricing to maximize your earnings based on demand",
-          highlight: "Auto-optimization"
+          icon: <Shield size={32} />,
+          title: "Protection & support",
+          description: "Trust-first policies and support designed to help you host with confidence.",
+          highlight: "Hosted with confidence"
+        },
+        {
+          icon: <MessageSquare size={32} />,
+          title: "Messaging",
+          description: "Coordinate pickups and questions with clear communication.",
+          highlight: "Easy coordination"
         }
       ]
     }
@@ -68,22 +68,22 @@ export default function EnhancedFeatures() {
     {
       icon: <Zap size={40} />,
       title: "Instant Booking",
-      description: "Book a car in under 60 seconds with our streamlined process"
-    },
-    {
-      icon: <MapPin size={40} />,
-      title: "GPS Tracking",
-      description: "Real-time vehicle tracking and geofencing for security"
+      description: "A streamlined booking flow designed to keep things simple"
     },
     {
       icon: <CreditCard size={40} />,
       title: "Secure Payments",
-      description: "Multiple payment options with bank-level encryption"
+      description: "Payments handled through the platform with clear totals and receipts"
     },
     {
-      icon: <HeadphonesIcon size={40} />,
-      title: "24/7 Support",
-      description: "Round-the-clock customer support via phone, chat, and email"
+      icon: <MessageSquare size={40} />,
+      title: "Messaging",
+      description: "Coordinate pickup details and questions with the host"
+    },
+    {
+      icon: <MapPin size={40} />,
+      title: "Cape Town-first rollout",
+      description: "Available in Cape Town now — expanding to more cities next"
     }
   ];
 
@@ -99,12 +99,11 @@ export default function EnhancedFeatures() {
           <h2 className="text-4xl md:text-5xl font-bold font-heading text-gray-900 mb-6">
             Everything You Need for
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-accent-500">
-              {" "}Perfect Car Sharing
+              {" "}Peer-to-Peer Rentals
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Experience the most comprehensive car sharing platform in South Africa, 
-            designed with cutting-edge technology and user-centric features.
+            Built for a smooth rental experience with clear pricing, better coordination, and trust-first design.
           </p>
         </div>
 
@@ -166,10 +165,10 @@ export default function EnhancedFeatures() {
         <div className="mt-20">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
-              Cutting-Edge Technology
+              Built for simplicity
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Powered by innovation, built for reliability and security
+              Practical features that help hosts and renters coordinate confidently.
             </p>
           </div>
 
@@ -189,24 +188,12 @@ export default function EnhancedFeatures() {
           </div>
         </div>
 
-        {/* Stats Section */}
+        {/* Rollout note */}
         <div className="mt-20 bg-gradient-to-r from-primary-500 to-accent-500 rounded-3xl p-12 text-white text-center">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold font-heading mb-2">99.9%</div>
-              <div className="text-white/90">Uptime Guarantee</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold font-heading mb-2">&lt;200ms</div>
-              <div className="text-white/90">Response Time</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold font-heading mb-2">256-bit</div>
-              <div className="text-white/90">Encryption</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold font-heading mb-2">24/7</div>
-              <div className="text-white/90">Monitoring</div>
+          <div className="max-w-3xl mx-auto">
+            <div className="text-3xl md:text-4xl font-bold font-heading mb-3">Cape Town now</div>
+            <div className="text-white/90 text-lg">
+              We’re expanding into more cities as the community grows.
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
-import { Car, DollarSign, Shield, Calendar, Users, Clock, TrendingUp, Award } from 'lucide-react';
+import { Car, DollarSign, Shield, Calendar, Users, TrendingUp, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import CTABanner from '../components/CTABanner';
 
 export default function ForHosts() {
@@ -59,12 +60,12 @@ export default function ForHosts() {
   const safetyFeatures = [
     {
       title: 'Renter Verification',
-      description: 'All renters undergo comprehensive identity and license verification.',
+      description: 'Verification-first onboarding helps build trust between renters and hosts.',
       icon: <Shield size={20} />,
     },
     {
-      title: 'Insurance Coverage',
-      description: 'Comprehensive insurance coverage during rental periods.',
+      title: 'Clear policies',
+      description: 'Clear booking rules and expectations help reduce misunderstandings.',
       icon: <Award size={20} />,
     },
     {
@@ -73,18 +74,13 @@ export default function ForHosts() {
       icon: <DollarSign size={20} />,
     },
     {
-      title: 'Reviews & Ratings',
-      description: 'Build trust through transparent reviews from both hosts and renters.',
+      title: 'Trust & Support',
+      description: 'Trust checks, clear policies, and support to help keep both sides safe.',
       icon: <Users size={20} />,
     },
     {
-      title: '24/7 Support',
-      description: 'Our support team is available around the clock for any issues.',
-      icon: <Clock size={20} />,
-    },
-    {
       title: 'Dispute Resolution',
-      description: 'Fair and fast dispute resolution process for peace of mind.',
+      description: 'A clear path to resolve issues if something goes wrong.',
       icon: <TrendingUp size={20} />,
     },
   ];
@@ -96,7 +92,7 @@ export default function ForHosts() {
     },
     {
       question: 'What happens if someone damages my car?',
-      answer: 'All rentals include comprehensive insurance coverage. Renters are also required to pay a security deposit which covers minor damages. Our dispute resolution team handles any issues.',
+      answer: 'Damage handling depends on the booking terms shown in the platform. If something happens, document it with photos and contact support with the booking details.',
     },
     {
       question: 'Can I control who rents my car?',
@@ -112,15 +108,28 @@ export default function ForHosts() {
     },
     {
       question: 'Do I need special insurance?',
-      answer: 'RideShareX provides insurance coverage during rentals. Your personal insurance remains in effect when you\'re using the car. We recommend checking with your insurer for any specific requirements.',
+      answer: 'RideShare SA provides insurance coverage during rentals. Your personal insurance remains in effect when you\'re using the car. We recommend checking with your insurer for any specific requirements.',
     },
   ];
 
   return (
     <div>
       {/* Header */}
-      <section className="bg-gradient-to-br from-accent-500 to-accent-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-accent-500 to-accent-600 text-white py-20">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-70 motion-safe:block motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
             For Hosts
           </h1>
@@ -130,12 +139,56 @@ export default function ForHosts() {
         </div>
       </section>
 
+      {/* Protection At A Glance */}
+      <section className="section-white py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2 glass-card p-8">
+              <h2 className="text-2xl md:text-3xl font-bold font-heading text-gray-900 mb-3">
+                Protection at a glance
+              </h2>
+              <p className="text-gray-600 mb-6">
+                A quick overview of how hosting is designed to stay safe and fair.
+              </p>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 mt-1">•</span>
+                  Insurance coverage included during rentals
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 mt-1">•</span>
+                  Renter verification (ID + driver’s licence checks)
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 mt-1">•</span>
+                  Clear claim steps + support if something goes wrong
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 mt-1">•</span>
+                  Clear coverage rules and claim steps
+                </li>
+              </ul>
+            </div>
+
+            <div className="glass-card p-8">
+              <div className="text-sm font-semibold text-accent-700 mb-2">Want the full details?</div>
+              <div className="text-gray-600 leading-relaxed mb-6">
+                See verification steps and safety processes.
+              </div>
+              <Link to="/safety" className="btn-outline w-full inline-flex items-center justify-center">
+                View safety & trust
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Host */}
       <section className="section-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
-              Why List Your Car on RideShareX?
+              Why List Your Car on RideShare SA?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               The smart way to make your car work for you
