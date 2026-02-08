@@ -1,5 +1,6 @@
 import { ArrowRight, Car, Search, Shield, CreditCard, MapPin, Users, DollarSign, CheckCircle, MessageSquare, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { PLATFORM_URL } from '../config/platform';
 
 export default function PlatformFeatures() {
   const coreFeatures = [
@@ -117,13 +118,15 @@ export default function PlatformFeatures() {
             A clear look at how RideShare SA supports peer-to-peer car rentals — starting in Cape Town.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/coming-soon"
+            <a
+              href={PLATFORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary bg-none bg-white text-primary-600 hover:bg-gray-100 inline-flex items-center justify-center"
             >
               Go to Platform
               <ArrowRight className="ml-2" size={20} />
-            </Link>
+            </a>
             <Link
               to="/contact"
               className="btn-outline border-white text-white hover:bg-white hover:text-primary-500 inline-flex items-center justify-center"
@@ -282,13 +285,15 @@ export default function PlatformFeatures() {
             Join the RideShare SA community in Cape Town — and help shape the rollout to new cities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/coming-soon"
+            <a
+              href={PLATFORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary inline-flex items-center justify-center"
             >
               Go to Platform
               <ArrowRight className="ml-2" size={20} />
-            </Link>
+            </a>
             <Link
               to="/contact"
               className="btn-outline inline-flex items-center justify-center"

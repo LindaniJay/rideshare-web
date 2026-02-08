@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { PLATFORM_URL } from '../config/platform';
 
 interface CTABannerProps {
   title?: string;
@@ -30,13 +31,15 @@ export default function CTABanner({
         <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">{title}</h2>
         <p className="text-lg md:text-xl mb-8 opacity-90">{subtitle}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            to="/coming-soon"
+          <a
+            href={PLATFORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`inline-flex items-center font-semibold py-4 px-8 rounded-xl transition-all duration-300 ${buttonClass}`}
           >
             {buttonText}
             <ArrowRight className="ml-2" size={20} />
-          </Link>
+          </a>
           {showSecondaryButton && (
             <Link
               to="/about"

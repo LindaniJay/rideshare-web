@@ -1,5 +1,6 @@
 import { ArrowRight, Target, Users, Globe, Heart, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { PLATFORM_URL } from '../config/platform';
 import Team from '../components/Team';
 
 export default function About() {
@@ -79,13 +80,15 @@ export default function About() {
             Making car rentals simpler through trusted peer-to-peer rentals
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/coming-soon"
+            <a
+              href={PLATFORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary bg-none bg-white text-primary-600 hover:bg-gray-100 inline-flex items-center justify-center"
             >
               Try Our Platform
               <ArrowRight className="ml-2" size={20} />
-            </Link>
+            </a>
             <Link
               to="/contact"
               className="btn-outline border-white text-white hover:bg-white hover:text-primary-500 inline-flex items-center justify-center"
@@ -208,13 +211,15 @@ export default function About() {
             Whether you're looking to rent a car or share yours, we're here to help you get started.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/coming-soon"
+            <a
+              href={PLATFORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary bg-none bg-white text-primary-600 hover:bg-gray-100 inline-flex items-center justify-center"
             >
               Get Started Now
               <ArrowRight className="ml-2" size={20} />
-            </Link>
+            </a>
             <Link
               to="/contact"
               className="btn-outline border-white text-white hover:bg-white hover:text-primary-500 inline-flex items-center justify-center"

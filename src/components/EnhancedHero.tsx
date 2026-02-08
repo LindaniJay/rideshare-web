@@ -1,5 +1,6 @@
 import { ArrowRight, MapPin, Users, Mail, Award, Sparkles, Zap, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { PLATFORM_URL } from '../config/platform';
 
 export default function EnhancedHero() {
   const stats = [
@@ -41,13 +42,15 @@ export default function EnhancedHero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up delay-400">
-            <Link
-              to="/coming-soon"
+            <a
+              href={PLATFORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group bg-white text-primary-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 flex items-center justify-center space-x-3"
             >
               <span>Start Renting Now</span>
               <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
-            </Link>
+            </a>
             <Link
               to="/how-it-works"
               className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold py-4 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3"

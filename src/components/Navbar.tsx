@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import brandLogo from '../assets/ChatGPT Image Jan 27, 2026, 09_43_18 AM.png';
+import { PLATFORM_URL } from '../config/platform';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -114,13 +115,24 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Link
-                to="/coming-soon"
-                className="group bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center space-x-2"
-              >
-                <span>Go to Platform</span>
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
-              </Link>
+              <div className="flex items-center gap-3">
+                <a
+                  href={PLATFORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center space-x-2"
+                >
+                  <span>Go to Platform</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+                </a>
+
+                <Link
+                  to="/coming-soon"
+                  className="border-2 border-white/60 text-white hover:bg-white hover:text-primary-600 font-semibold py-3 px-6 rounded-full transition-all duration-300"
+                >
+                  Join waitlist
+                </Link>
+              </div>
             </div>
 
             {/* Mobile menu button */}
@@ -180,14 +192,26 @@ export default function Navbar() {
 
                 {/* Mobile CTA */}
                 <div className="px-4">
-                  <Link
-                    to="/coming-soon"
-                    className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <span>Go to Platform</span>
-                    <ArrowRight size={18} />
-                  </Link>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href={PLATFORM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <span>Go to Platform</span>
+                      <ArrowRight size={18} />
+                    </a>
+
+                    <Link
+                      to="/coming-soon"
+                      className="w-full border-2 border-white/60 text-white hover:bg-white hover:text-primary-600 font-semibold py-3 px-6 rounded-full transition-all duration-300 flex items-center justify-center"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Join waitlist
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

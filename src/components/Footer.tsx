@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import brandLogo from '../assets/ChatGPT Image Jan 27, 2026, 09_43_18 AM.png';
+import { PLATFORM_URL } from '../config/platform';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -55,12 +56,14 @@ export default function Footer() {
 
           {/* CTA */}
           <div>
-            <Link
-              to="/coming-soon"
+            <a
+              href={PLATFORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-center block"
             >
               Go to Platform
-            </Link>
+            </a>
           </div>
         </div>
 
