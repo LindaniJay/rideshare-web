@@ -1,7 +1,35 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 export default function EarningsCalculator() {
+  // ...existing code...
+  return (
+    <>
+      <Helmet>
+        <title>Host Earnings Calculator | RideShare SA</title>
+        <meta name="description" content="Estimate your monthly earnings as a host on RideShare SA. Use our calculator to see how much you can earn by renting out your car in South Africa." />
+        <meta name="keywords" content="earnings calculator, host, rideshare, car rental, South Africa" />
+        <meta property="og:title" content="Host Earnings Calculator | RideShare SA" />
+        <meta property="og:description" content="Estimate your monthly earnings as a host on RideShare SA. Use our calculator to see how much you can earn by renting out your car in South Africa." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ridesharesa.co.za/earnings-calculator" />
+        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Host Earnings Calculator | RideShare SA",
+              "url": "https://www.ridesharesa.co.za/earnings-calculator",
+              "description": "Estimate your monthly earnings as a host on RideShare SA. Use our calculator to see how much you can earn by renting out your car in South Africa."
+            }
+          `}
+        </script>
+      </Helmet>
+      {/* ...existing code... */}
+    </>
+  );
   const [dailyRate, setDailyRate] = useState(550);
   const [daysPerMonth, setDaysPerMonth] = useState(8);
   const [platformFeePct, setPlatformFeePct] = useState(20);

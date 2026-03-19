@@ -1,8 +1,36 @@
 import { Mail, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
 import CTABanner from '../components/CTABanner';
+import { Helmet } from 'react-helmet';
 
 export default function Contact() {
+  // ...existing code...
+  return (
+    <>
+      <Helmet>
+        <title>Contact RideShare SA | Get in Touch</title>
+        <meta name="description" content="Contact RideShare SA for support, partnership, or general inquiries. We're here to help you with peer-to-peer car rentals in South Africa." />
+        <meta name="keywords" content="contact, rideshare, car rental, support, partnership, South Africa" />
+        <meta property="og:title" content="Contact RideShare SA | Get in Touch" />
+        <meta property="og:description" content="Contact RideShare SA for support, partnership, or general inquiries. We're here to help you with peer-to-peer car rentals in South Africa." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ridesharesa.co.za/contact" />
+        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "name": "Contact RideShare SA",
+              "url": "https://www.ridesharesa.co.za/contact",
+              "description": "Contact RideShare SA for support, partnership, or general inquiries. We're here to help you with peer-to-peer car rentals in South Africa."
+            }
+          `}
+        </script>
+      </Helmet>
+      {/* ...existing code... */}
+    </>
+  );
   const [formData, setFormData] = useState({
     name: '',
     email: '',

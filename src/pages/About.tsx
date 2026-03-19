@@ -2,8 +2,36 @@ import { ArrowRight, Target, Users, Globe, Heart, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { PLATFORM_URL } from '../config/platform';
 import Team from '../components/Team';
+import { Helmet } from 'react-helmet';
 
 export default function About() {
+  // ...existing code...
+  return (
+    <>
+      <Helmet>
+        <title>About RideShare SA | Peer-to-Peer Car Rentals</title>
+        <meta name="description" content="Learn about RideShare SA, our mission, values, and how we are building a trusted peer-to-peer car rental community in South Africa." />
+        <meta name="keywords" content="about, rideshare, car rental, Cape Town, South Africa, peer-to-peer, community" />
+        <meta property="og:title" content="About RideShare SA | Peer-to-Peer Car Rentals" />
+        <meta property="og:description" content="Learn about RideShare SA, our mission, values, and how we are building a trusted peer-to-peer car rental community in South Africa." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ridesharesa.co.za/about" />
+        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "About RideShare SA",
+              "url": "https://www.ridesharesa.co.za/about",
+              "description": "Learn about RideShare SA, our mission, values, and how we are building a trusted peer-to-peer car rental community in South Africa."
+            }
+          `}
+        </script>
+      </Helmet>
+      {/* ...existing code... */}
+    </>
+  );
   const milestones = [
     {
       year: "Now",

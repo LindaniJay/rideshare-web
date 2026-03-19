@@ -1,7 +1,35 @@
 import FAQAccordion from '../components/FAQAccordion';
 import CTABanner from '../components/CTABanner';
+import { Helmet } from 'react-helmet';
 
 export default function FAQ() {
+  // ...existing code...
+  return (
+    <>
+      <Helmet>
+        <title>FAQ | RideShare SA - Peer-to-Peer Car Rentals</title>
+        <meta name="description" content="Frequently asked questions about RideShare SA, peer-to-peer car rentals, insurance, booking, and hosting in South Africa." />
+        <meta name="keywords" content="FAQ, rideshare, car rental, insurance, booking, hosting, South Africa" />
+        <meta property="og:title" content="FAQ | RideShare SA - Peer-to-Peer Car Rentals" />
+        <meta property="og:description" content="Frequently asked questions about RideShare SA, peer-to-peer car rentals, insurance, booking, and hosting in South Africa." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ridesharesa.co.za/faq" />
+        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "name": "FAQ | RideShare SA",
+              "url": "https://www.ridesharesa.co.za/faq",
+              "description": "Frequently asked questions about RideShare SA, peer-to-peer car rentals, insurance, booking, and hosting in South Africa."
+            }
+          `}
+        </script>
+      </Helmet>
+      {/* ...existing code... */}
+    </>
+  );
   const renterFAQs = [
     {
       question: 'Do I need special insurance to rent a car?',

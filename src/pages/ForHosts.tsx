@@ -1,8 +1,36 @@
 import { Car, DollarSign, Shield, Calendar, Users, TrendingUp, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CTABanner from '../components/CTABanner';
+import { Helmet } from 'react-helmet';
 
 export default function ForHosts() {
+  // ...existing code...
+  return (
+    <>
+      <Helmet>
+        <title>For Hosts | RideShare SA - Earn with Your Car</title>
+        <meta name="description" content="Become a host on RideShare SA and earn extra income by renting out your car. Flexible schedule, full insurance, and a growing community in South Africa." />
+        <meta name="keywords" content="hosts, earn, car rental, rideshare, South Africa, insurance, community" />
+        <meta property="og:title" content="For Hosts | RideShare SA - Earn with Your Car" />
+        <meta property="og:description" content="Become a host on RideShare SA and earn extra income by renting out your car. Flexible schedule, full insurance, and a growing community in South Africa." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ridesharesa.co.za/for-hosts" />
+        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "For Hosts | RideShare SA",
+              "url": "https://www.ridesharesa.co.za/for-hosts",
+              "description": "Become a host on RideShare SA and earn extra income by renting out your car. Flexible schedule, full insurance, and a growing community in South Africa."
+            }
+          `}
+        </script>
+      </Helmet>
+      {/* ...existing code... */}
+    </>
+  );
   const whyHost = [
     {
       title: 'Earn Extra Income',

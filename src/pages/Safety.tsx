@@ -1,7 +1,35 @@
 import { Shield, CheckCircle, AlertCircle, Users, Car, FileText, Mail, Lock } from 'lucide-react';
 import CTABanner from '../components/CTABanner';
+import { Helmet } from 'react-helmet';
 
 export default function Safety() {
+  // ...existing code...
+  return (
+    <>
+      <Helmet>
+        <title>Safety | RideShare SA - Secure Car Rentals</title>
+        <meta name="description" content="Learn about RideShare SA's safety features, verification steps, and secure payments for peer-to-peer car rentals in South Africa." />
+        <meta name="keywords" content="safety, secure, verification, rideshare, car rental, South Africa" />
+        <meta property="og:title" content="Safety | RideShare SA - Secure Car Rentals" />
+        <meta property="og:description" content="Learn about RideShare SA's safety features, verification steps, and secure payments for peer-to-peer car rentals in South Africa." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ridesharesa.co.za/safety" />
+        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Safety | RideShare SA",
+              "url": "https://www.ridesharesa.co.za/safety",
+              "description": "Learn about RideShare SA's safety features, verification steps, and secure payments for peer-to-peer car rentals in South Africa."
+            }
+          `}
+        </script>
+      </Helmet>
+      {/* ...existing code... */}
+    </>
+  );
   const verificationSteps = [
     {
       title: 'Identity Verification',

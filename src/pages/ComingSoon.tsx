@@ -2,6 +2,7 @@ import { ArrowLeft, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useMemo, useState } from 'react';
 import brandLogo from '../assets/ChatGPT Image Jan 27, 2026, 09_43_18 AM.png';
+import { Helmet } from 'react-helmet';
 
 type WaitlistInterest = 'Renter' | 'Host' | 'Both';
 
@@ -36,6 +37,27 @@ export default function ComingSoon() {
     <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800 px-4 py-16">
       <div className="max-w-2xl w-full">
         <div className="glass-card-dark p-10 text-center">
+          <Helmet>
+            <title>Coming Soon | RideShare SA</title>
+            <meta name="description" content="RideShare SA is launching soon! Join our waitlist to be notified when peer-to-peer car rentals are available in South Africa." />
+            <meta name="keywords" content="coming soon, waitlist, rideshare, car rental, South Africa" />
+            <meta property="og:title" content="Coming Soon | RideShare SA" />
+            <meta property="og:description" content="RideShare SA is launching soon! Join our waitlist to be notified when peer-to-peer car rentals are available in South Africa." />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.ridesharesa.co.za/coming-soon" />
+            <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
+            <script type="application/ld+json">
+              {`
+                {
+                  "@context": "https://schema.org",
+                  "@type": "WebPage",
+                  "name": "Coming Soon | RideShare SA",
+                  "url": "https://www.ridesharesa.co.za/coming-soon",
+                  "description": "RideShare SA is launching soon! Join our waitlist to be notified when peer-to-peer car rentals are available in South Africa."
+                }
+              `}
+            </script>
+          </Helmet>
           <div className="mx-auto mb-6 w-20 h-20 rounded-full overflow-hidden ring-2 ring-white/20 bg-white/10">
             <img src={brandLogo} alt="RideShare SA logo" className="w-full h-full object-cover" />
           </div>
