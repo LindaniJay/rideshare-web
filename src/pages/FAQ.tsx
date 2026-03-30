@@ -1,51 +1,25 @@
 import FAQAccordion from '../components/FAQAccordion';
 import CTABanner from '../components/CTABanner';
 import { Helmet } from 'react-helmet';
+import { SUPPORT_EMAIL } from '../config/contact';
 
 export default function FAQ() {
-  // ...existing code...
-  return (
-    <>
-      <Helmet>
-        <title>FAQ | RideShare SA - Peer-to-Peer Car Rentals</title>
-        <meta name="description" content="Frequently asked questions about RideShare SA, peer-to-peer car rentals, insurance, booking, and hosting in South Africa." />
-        <meta name="keywords" content="FAQ, rideshare, car rental, insurance, booking, hosting, South Africa" />
-        <meta property="og:title" content="FAQ | RideShare SA - Peer-to-Peer Car Rentals" />
-        <meta property="og:description" content="Frequently asked questions about RideShare SA, peer-to-peer car rentals, insurance, booking, and hosting in South Africa." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ridesharesa.co.za/faq" />
-        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "name": "FAQ | RideShare SA",
-              "url": "https://www.ridesharesa.co.za/faq",
-              "description": "Frequently asked questions about RideShare SA, peer-to-peer car rentals, insurance, booking, and hosting in South Africa."
-            }
-          `}
-        </script>
-      </Helmet>
-      {/* ...existing code... */}
-    </>
-  );
   const renterFAQs = [
     {
       question: 'Do I need special insurance to rent a car?',
-      answer: 'You don\'t need to arrange anything in advance on this site. Any protection, deposits, or coverage details are shown clearly during the booking flow on the platform.',
+      answer: "You don't need to arrange anything in advance. Any protection, deposits, or coverage details are shown clearly during the booking flow on the platform.",
     },
     {
       question: 'What do I need to bring when picking up the car?',
-      answer: 'You\'ll need to bring your valid South African driver\'s license, original ID document or passport, and a credit card for the security deposit. Make sure your license is current and not expired.',
+      answer: "You'll need your valid South African driver's license, original ID document or passport, and a credit card for the security deposit. Make sure your license is current.",
     },
     {
       question: 'How does the security deposit work?',
-      answer: 'Deposit and payment terms (if applicable) are shown during checkout before you confirm a booking, so you can review everything upfront.',
+      answer: 'Deposit and payment terms are shown during checkout before you confirm a booking, so you can review everything upfront.',
     },
     {
       question: 'What happens if I return the car late?',
-      answer: 'Late return rules are defined per booking. If you\'re running late, message the host as early as possible so you can agree on the best next step.',
+      answer: "Late return rules are defined per booking. If you're running late, message the host as early as possible so you can agree on the best next step.",
     },
     {
       question: 'Can I cancel my booking?',
@@ -53,7 +27,7 @@ export default function FAQ() {
     },
     {
       question: 'What if the car breaks down during my rental?',
-      answer: 'First, contact the host using the platform to coordinate next steps. If you need help, email us at rideshare.sasup@gmail.com and include your booking details.',
+      answer: `First, contact the host using the platform to coordinate next steps. If you need help, email us at ${SUPPORT_EMAIL} and include your booking details.`,
     },
   ];
 
@@ -68,7 +42,7 @@ export default function FAQ() {
     },
     {
       question: 'What if a renter damages my car?',
-      answer: 'All rentals include comprehensive insurance coverage. The renter\'s security deposit covers minor damages, while insurance covers major incidents. Our dispute resolution team helps handle any claims fairly.',
+      answer: "All rentals include insurance coverage. The renter's security deposit covers minor damages, while insurance covers major incidents. Our dispute resolution team helps handle any claims fairly.",
     },
     {
       question: 'Can I reject a booking request?',
@@ -76,39 +50,65 @@ export default function FAQ() {
     },
     {
       question: 'How and when do I get paid?',
-      answer: 'Payments are processed securely and transferred to your bank account within a few business days after each successful rental. You can track all earnings and payouts in your dashboard.',
+      answer: 'Payments are processed securely and transferred to your bank account within 2-3 business days after each successful rental. You can track all earnings and payouts in your dashboard.',
     },
     {
       question: 'Do I need to provide insurance?',
-      answer: 'RideShare SA provides insurance coverage during rental periods. You should maintain your personal insurance for when you\'re using the vehicle. We recommend checking with your insurer about any specific requirements.',
+      answer: 'RideShare SA provides insurance coverage during rental periods. You should maintain your personal insurance for when you are using the vehicle. We recommend checking with your insurer about any specific requirements.',
     },
   ];
 
   const generalFAQs = [
     {
       question: 'How does RideShare SA verify users?',
-      answer: 'We prioritize identity and driver\'s license checks. The exact steps shown may vary by booking, and verification requirements are communicated clearly in the platform flow.',
+      answer: "We require identity verification and driver's licence checks. Verification requirements are communicated clearly in the platform flow.",
     },
     {
       question: 'What areas does RideShare SA operate in?',
-      answer: 'Right now we\'re available in Cape Town. We\'re expanding into other cities across South Africa next — follow our updates for new launch areas as they go live.',
+      answer: "We're currently available in Cape Town. We're expanding to more South African cities soon.",
     },
     {
       question: 'How do payments work?',
       answer: 'Payment and payout details are handled in the platform and shown clearly during booking so both sides know what to expect.',
     },
     {
-      question: 'What if there\'s a dispute between host and renter?',
-      answer: 'If there\'s a dispute, contact support with booking details and any relevant evidence. We\'ll help guide the next steps according to the platform rules.',
+      question: "What if there's a dispute between host and renter?",
+      answer: "If there's a dispute, contact support with booking details and any relevant evidence. We'll help guide the next steps according to the platform rules.",
     },
     {
       question: 'How do I contact customer support?',
-      answer: 'Email us at rideshare.sasup@gmail.com and include any relevant booking details so we can help faster.',
+      answer: `Email us at ${SUPPORT_EMAIL} and include any relevant booking details so we can help faster.`,
     },
   ];
 
+  const allFAQs = [...renterFAQs, ...hostFAQs, ...generalFAQs];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: allFAQs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <div>
+      <Helmet>
+        <title>FAQ | RideShare SA - Peer-to-Peer Car Rentals</title>
+        <meta name="description" content="Frequently asked questions about RideShare SA, peer-to-peer car rentals, insurance, booking, and hosting in South Africa." />
+        <meta property="og:title" content="FAQ | RideShare SA - Peer-to-Peer Car Rentals" />
+        <meta property="og:description" content="Frequently asked questions about RideShare SA." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ridesharesa.co.za/faq" />
+        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
+
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
         <video
@@ -117,18 +117,17 @@ export default function FAQ() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           aria-hidden="true"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
-
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
             Everything you need to know about RideShare SA
           </p>
         </div>
@@ -164,7 +163,7 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* General & Payment FAQs */}
+      {/* General FAQs */}
       <section className="section-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -186,20 +185,17 @@ export default function FAQ() {
             Still have questions?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Can't find what you're looking for? Email us and we’ll help.
+            Can't find what you're looking for? Email us and we'll help.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:rideshare.sasup@gmail.com?subject=RideShare%20SA%20%E2%80%94%20Support"
-              className="btn-primary"
-            >
-              Email Support
-            </a>
-          </div>
+          <a
+            href={`mailto:${SUPPORT_EMAIL}?subject=RideShare%20SA%20%E2%80%94%20Support`}
+            className="btn-primary inline-flex items-center justify-center"
+          >
+            Email Support
+          </a>
         </div>
       </section>
 
-      {/* CTA Banner */}
       <CTABanner
         title="Ready to get started?"
         subtitle="Join South Africa's trusted peer-to-peer car rental platform."

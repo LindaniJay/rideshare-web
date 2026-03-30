@@ -3,7 +3,9 @@ import { useMemo, useState } from 'react';
 
 type Interest = 'renting' | 'hosting' | 'both';
 
-const PHIWE_EMAIL = 'rideshare.sasup@gmail.com';
+import { SUPPORT_EMAIL } from '../config/contact';
+
+const PHIWE_EMAIL = SUPPORT_EMAIL;
 
 function buildMailtoUrl(to: string, subject: string, body: string) {
   const params = new URLSearchParams({

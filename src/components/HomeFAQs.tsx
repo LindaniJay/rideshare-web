@@ -4,31 +4,46 @@ import FAQAccordion from './FAQAccordion';
 export default function HomeFAQs() {
   const items = [
     {
+      question: 'How does RideShare SA work?',
+      answer:
+        'Car owners list their vehicles on the platform. Renters browse, book, and pay securely online. Then you coordinate pickup with the host and drive.',
+    },
+    {
       question: 'What happens if there is an accident?',
       answer:
-        'Rentals include insurance coverage during the booking period. If something happens, you’ll get guided claim steps and support when needed.',
+        "Rentals include insurance coverage during the booking period. If something happens, you'll get guided claim steps and support.",
     },
     {
       question: 'What checks do you run on renters?',
       answer:
-        'We require identity verification and driver’s licence checks, plus additional trust checks to keep hosts and renters safe.',
+        'We require identity verification and driver licence checks, plus additional trust checks to keep both hosts and renters safe.',
     },
     {
-      question: 'What if a host cancels last minute?',
+      question: 'How much does it cost to rent?',
       answer:
-        'We’ll help you find a suitable alternative when possible and continuously improve reliability with host performance standards.',
+        'Rates are set by individual hosts and typically range from R250 to R900+ per day depending on the vehicle. All costs are shown upfront before you book.',
+    },
+    {
+      question: 'How do hosts get paid?',
+      answer:
+        'Payments are processed through the platform. Host payouts are made within 2-3 business days after the rental ends.',
+    },
+    {
+      question: 'Where is RideShare SA available?',
+      answer:
+        "We're currently live in Cape Town and expanding to more South African cities soon. Sign up to be notified when we launch in your area.",
     },
   ];
 
   return (
-    <section className="section-white py-20">
+    <section className="section-light py-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
-            Quick answers
+            Common questions
           </h2>
           <p className="text-gray-600 text-lg">
-            The most common questions we hear before booking.
+            Everything you need to know before your first booking.
           </p>
         </div>
 
@@ -36,7 +51,7 @@ export default function HomeFAQs() {
 
         <div className="mt-8 text-center">
           <Link to="/faq" className="btn-outline inline-flex items-center justify-center">
-            Read the full FAQ
+            See all FAQs
           </Link>
         </div>
       </div>

@@ -133,7 +133,7 @@ export default function Safety() {
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
             Safety & Trust
           </h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
             Your safety is our highest priority. Learn how we keep our community secure.
           </p>
         </div>
@@ -270,7 +270,7 @@ export default function Safety() {
           <h2 className="text-2xl md:text-3xl font-bold font-heading mb-4">
             Safety and trust-first design
           </h2>
-          <p className="text-lg opacity-90 mb-6">
+          <p className="text-lg text-white mb-6">
             We build with safety, verification, and clear policies in mind — so both sides can rent with confidence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

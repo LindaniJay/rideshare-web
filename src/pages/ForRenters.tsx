@@ -147,7 +147,7 @@ export default function ForRenters() {
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
             For Renters
           </h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
             Find the perfect car for any occasion. Save money, enjoy flexibility, and drive with confidence.
           </p>
         </div>

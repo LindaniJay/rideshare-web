@@ -1,12 +1,14 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import brandLogo from '../assets/ChatGPT Image Jan 27, 2026, 09_43_18 AM.png';
 import { PLATFORM_URL } from '../config/platform';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   const mainNavItems = [
@@ -35,7 +37,19 @@ export default function Navbar() {
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMobileMenuOpen(false);
+    setIsDropdownOpen(false);
   }, [location]);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -86,30 +100,41 @@ export default function Navbar() {
               </div>
 
               {/* Dropdown for secondary items */}
-              <div className="relative group">
-                <button className="px-5 py-2.5 rounded-full font-medium text-white hover:text-primary-400 hover:bg-white/10 transition-all duration-300 flex items-center space-x-1">
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Escape') setIsDropdownOpen(false);
+                  }}
+                  aria-expanded={isDropdownOpen}
+                  aria-haspopup="true"
+                  className="px-5 py-2.5 rounded-full font-medium text-white hover:text-primary-400 hover:bg-white/10 transition-all duration-300 flex items-center space-x-1"
+                >
                   <span>More</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                  <div className="bg-black/90 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 overflow-hidden">
-                    {secondaryNavItems.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        className={`block px-4 py-3 font-medium transition-colors ${
-                          location.pathname === item.path
-                            ? 'bg-primary-500 text-white'
-                            : 'text-white hover:text-primary-400 hover:bg-white/10'
-                        }`}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                {isDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-56 transform transition-all duration-300">
+                    <div className="bg-black/90 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 overflow-hidden" role="menu">
+                      {secondaryNavItems.map((item) => (
+                        <Link
+                          key={item.path}
+                          to={item.path}
+                          role="menuitem"
+                          className={`block px-4 py-3 font-medium transition-colors ${
+                            location.pathname === item.path
+                              ? 'bg-primary-500 text-white'
+                              : 'text-white hover:text-primary-400 hover:bg-white/10'
+                          }`}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </nav>
 

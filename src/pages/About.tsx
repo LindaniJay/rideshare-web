@@ -104,7 +104,7 @@ export default function About() {
           <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">
             About RideShare SA
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8 text-white max-w-3xl mx-auto">
             Making car rentals simpler through trusted peer-to-peer rentals
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -235,7 +235,7 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
             Ready to Join Our Community?
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 text-white max-w-2xl mx-auto">
             Whether you're looking to rent a car or share yours, we're here to help you get started.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

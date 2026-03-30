@@ -1,98 +1,59 @@
-import { ArrowRight, MapPin, Users, Mail, Award, Sparkles, Zap, Shield } from 'lucide-react';
+import { ArrowRight, Shield, Zap, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { PLATFORM_URL } from '../config/platform';
 
 export default function EnhancedHero() {
-  const stats = [
-    { value: "Cape Town", label: "Available in", icon: <MapPin size={20} /> },
-    { value: "Trusted", label: "Community", icon: <Users size={20} /> },
-    { value: "Clear", label: "Pricing", icon: <Award size={20} /> },
-    { value: "Email", label: "Support", icon: <Mail size={20} /> },
-  ];
-
-  const features = [
-    { icon: <Zap size={24} />, title: "Easy Booking", description: "Simple and quick reservation process" },
-    { icon: <Shield size={24} />, title: "Safe & Secure", description: "Protected transactions and support" },
-    { icon: <Award size={24} />, title: "Great Value", description: "Competitive rates and offers" },
+  const trustBadges = [
+    { icon: <Shield size={18} />, label: "Verified Users" },
+    { icon: <Zap size={18} />, label: "Instant Booking" },
+    { icon: <MapPin size={18} />, label: "Live in Cape Town" },
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-4 py-2 mb-8 animate-fade-in">
-            <Sparkles className="text-yellow-300" size={16} />
-            <span className="text-white font-medium text-sm">Peer-to-peer car rentals</span>
-          </div>
-
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold font-heading text-white mb-6 animate-slide-up">
             <span className="block">Rent Cars from</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-accent-400">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-primary-400">
               Local Owners
             </span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed animate-slide-up delay-200">
-            Experience the future of car rental in South Africa. 
-            Rent from local owners while supporting your community.
+          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed animate-slide-up delay-200">
+            South Africa's peer-to-peer car rental marketplace.
+            Affordable rates, trusted owners, flexible pickups.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up delay-400">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-up delay-400">
             <a
               href={PLATFORM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-white text-primary-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 flex items-center justify-center space-x-3"
             >
-              <span>Start Renting Now</span>
+              <span>Browse Cars</span>
               <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
             </a>
             <Link
               to="/how-it-works"
               className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold py-4 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3"
             >
-              <span>See How It Works</span>
-              <div className="w-5 h-5 rounded-full border-2 border-current group-hover:scale-110 transition-transform"></div>
+              <span>How It Works</span>
             </Link>
           </div>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 animate-fade-in delay-600">
-            {stats.map((stat, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300">
-                <div className="flex justify-center mb-3 text-yellow-300">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-white/80">{stat.label}</div>
+          {/* Trust Badges - compact row */}
+          <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-600">
+            {trustBadges.map((badge, index) => (
+              <div key={index} className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2.5">
+                <div className="text-white">{badge.icon}</div>
+                <span className="text-white text-sm font-medium">{badge.label}</span>
               </div>
             ))}
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 max-w-4xl mx-auto animate-scale-in delay-800">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-center space-x-4 text-white">
-                  <div className="flex-shrink-0 w-12 h-12 bg-yellow-400/20 rounded-xl flex items-center justify-center">
-                    <div className="text-yellow-300">{feature.icon}</div>
-                  </div>
-                  <div className="text-left">
-                    <div className="font-semibold text-white">{feature.title}</div>
-                    <div className="text-sm text-white/80">{feature.description}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-12 text-white/90 animate-fade-in delay-1000">
-            <div className="font-semibold">Live in Cape Town now</div>
-            <div className="text-sm text-white/80">More South African cities coming soon.</div>
           </div>
         </div>
       </div>

@@ -1,52 +1,33 @@
 import CTABanner from '../components/CTABanner';
-import Team from '../components/Team';
 import EnhancedHero from '../components/EnhancedHero';
-import EnhancedFeatures from '../components/EnhancedFeatures';
+import HowItWorksPreview from '../components/HowItWorksPreview';
 import UseCasesStrip from '../components/UseCasesStrip';
-import SafetySummary from '../components/SafetySummary';
-import ComparisonSection from '../components/ComparisonSection';
+import EnhancedFeatures from '../components/EnhancedFeatures';
 import HostEarningsExplainer from '../components/HostEarningsExplainer';
-import ByTheNumbers from '../components/ByTheNumbers';
 import HomeFAQs from '../components/HomeFAQs';
-import CitySpotlight from '../components/CitySpotlight';
-import CommunityImpact from '../components/CommunityImpact';
 
 export default function Home() {
   return (
     <div>
-      {/* Enhanced Hero Section */}
+      {/* 1. Hero — clean headline, 1 primary CTA, trust badges */}
       <EnhancedHero />
 
-      {/* Trusted By */}
-      {/* Use Cases */}
+      {/* 2. How It Works — 3-step visual flow */}
+      <HowItWorksPreview />
+
+      {/* 3. Use Cases + Comparison (merged) */}
       <UseCasesStrip />
 
-      {/* Safety & Objections */}
-      <SafetySummary />
-      <ComparisonSection />
-
-      {/* Enhanced Features Section */}
+      {/* 4. Key Features — 6 cards, links to detail pages */}
       <EnhancedFeatures />
 
-      {/* Host Earnings */}
+      {/* 5. Host Earnings + Social Proof (merged) */}
       <HostEarningsExplainer />
 
-      {/* By The Numbers */}
-      <ByTheNumbers />
-
-      {/* Quick FAQs */}
+      {/* 6. FAQs — 6 questions */}
       <HomeFAQs />
 
-      {/* City Spotlight */}
-      <CitySpotlight />
-
-      {/* Community Impact */}
-      <CommunityImpact />
-
-      {/* Team Section */}
-      <Team />
-
-      {/* CTA Banner */}
+      {/* 7. Final CTA */}
       <CTABanner />
     </div>
   );

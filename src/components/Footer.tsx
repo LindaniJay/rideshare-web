@@ -72,6 +72,10 @@ export default function Footer() {
             <p className="text-gray-400 text-sm">
               © {year} RideShare SA. Cape Town, South Africa. All rights reserved.
             </p>
+            <div className="flex space-x-6 text-sm">
+              <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ export default function EarningsCalculator() {
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">
             Host Earnings Calculator
           </h1>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Estimate monthly earnings based on your pricing and availability.
           </p>
         </div>

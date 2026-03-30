@@ -128,7 +128,7 @@ export default function HowItWorks() {
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6">
             How RideShare SA Works
           </h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
             Learn how easy it is to rent cars or earn money as a host on our platform
           </p>
         </div>

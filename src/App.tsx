@@ -12,6 +12,8 @@ import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import EarningsCalculator from './pages/EarningsCalculator';
 import ComingSoon from './pages/ComingSoon';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 import './index.css';
 
@@ -32,6 +34,8 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
         </Routes>
       </Layout>
     </Router>
