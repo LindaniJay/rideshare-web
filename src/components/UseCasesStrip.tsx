@@ -1,6 +1,8 @@
 import { Briefcase, Palmtree, Plane, GraduationCap, CheckCircle } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function UseCasesStrip() {
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
   const items = [
     {
       icon: <Briefcase size={20} />,
@@ -32,9 +34,9 @@ export default function UseCasesStrip() {
   ];
 
   return (
-    <section className="section-light py-20">
+    <section ref={sectionRef} className="section-light py-20 dots-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 reveal ${isVisible ? 'visible' : ''}`}>
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-3">
             Perfect for every trip
           </h2>
@@ -42,8 +44,8 @@ export default function UseCasesStrip() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
-          {items.map((item) => (
-            <div key={item.title} className="glass-card p-6">
+          {items.map((item, index) => (
+            <div key={item.title} className={`glass-card p-6 card-glow card-accent-top reveal ${isVisible ? 'visible' : ''} stagger-${index + 1}`}>
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600">
                   {item.icon}
@@ -56,7 +58,7 @@ export default function UseCasesStrip() {
         </div>
 
         {/* Why RideShare SA vs traditional rentals */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-5 sm:p-8 md:p-10">
+        <div className={`bg-white rounded-2xl border border-gray-100 shadow-lg p-5 sm:p-8 md:p-10 card-glow reveal-scale ${isVisible ? 'visible' : ''}`}>
           <h3 className="text-xl md:text-2xl font-bold font-heading text-gray-900 mb-6 text-center">
             Why choose RideShare SA over traditional rentals?
           </h3>

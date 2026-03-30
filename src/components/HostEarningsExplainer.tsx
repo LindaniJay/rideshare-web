@@ -1,7 +1,9 @@
 import { ArrowRight, Calculator, TrendingUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function HostEarningsExplainer() {
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.08 });
   const examples = [
     {
       title: 'Toyota Corolla',
@@ -34,11 +36,11 @@ export default function HostEarningsExplainer() {
   ];
 
   return (
-    <section className="section-white py-20">
+    <section ref={sectionRef} className="section-white-gradient py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Earnings Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
-          <div>
+          <div className={`reveal-left ${isVisible ? 'visible' : ''}`}>
             <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 rounded-full px-4 py-2 mb-6">
               <TrendingUp size={16} />
               <span className="font-semibold text-sm">HOST EARNINGS</span>
@@ -63,9 +65,9 @@ export default function HostEarningsExplainer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-5">
-            {examples.map((ex) => (
-              <div key={ex.title} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+          <div className={`grid grid-cols-1 gap-5 reveal-right ${isVisible ? 'visible' : ''}`}>
+            {examples.map((ex, index) => (
+              <div key={ex.title} className={`bg-gray-50 rounded-xl p-6 border border-gray-100 card-glow card-accent-top stagger-${index + 1}`}>
                 <div className="flex justify-between items-start">
                   <div>
                     <div className="font-semibold text-gray-900 font-heading">{ex.title}</div>
@@ -80,13 +82,13 @@ export default function HostEarningsExplainer() {
         </div>
 
         {/* Testimonials / Social Proof */}
-        <div>
+        <div className={`reveal ${isVisible ? 'visible' : ''}`}>
           <h3 className="text-2xl md:text-3xl font-bold font-heading text-gray-900 mb-8 text-center">
             What people are saying
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+              <div key={index} className={`bg-gray-50 rounded-2xl p-8 border border-gray-100 card-glow reveal ${isVisible ? 'visible' : ''} stagger-${index + 1}`}>
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={16} className="text-primary-500 fill-primary-500" />

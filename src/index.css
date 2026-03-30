@@ -173,14 +173,14 @@
 
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, #00A651, #FFD700);
+    background: linear-gradient(135deg, #00A651, #4ade80);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .gradient-text-accent {
-    background: linear-gradient(135deg, #FFD700, #00A651);
+    background: linear-gradient(135deg, #4ade80, #00A651);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -207,5 +207,172 @@
       linear-gradient(rgba(255, 215, 0, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 215, 0, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
+  }
+
+  /* ====== Scroll-reveal animations ====== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* ====== Animated gradient border glow for cards ====== */
+  .card-glow {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .card-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+      135deg,
+      transparent 30%,
+      rgba(0, 166, 81, 0.4) 50%,
+      transparent 70%
+    );
+    background-size: 200% 200%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .card-glow:hover::before {
+    opacity: 1;
+    animation: borderShimmer 2s linear infinite;
+  }
+
+  @keyframes borderShimmer {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+  }
+
+  /* ====== Accent top bar for cards ====== */
+  .card-accent-top {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-accent-top::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00A651, #4ade80, #00A651);
+    background-size: 200% 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-accent-top:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* ====== Enriched section backgrounds ====== */
+  .section-white-gradient {
+    background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+  }
+
+  .section-mint {
+    background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  }
+
+  /* Decorative dots pattern overlay */
+  .dots-pattern {
+    background-image: radial-gradient(circle, rgba(0, 166, 81, 0.07) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Wave section divider */
+  .wave-divider {
+    position: relative;
+  }
+
+  .wave-divider::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 48px;
+    background: currentColor;
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 24C200 4 400 44 600 24C800 4 1000 44 1200 24V48H0V24Z' fill='white'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 24C200 4 400 44 600 24C800 4 1000 44 1200 24V48H0V24Z' fill='white'/%3E%3C/svg%3E");
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+  }
+
+  /* ====== Stagger delay utilities for card grids ====== */
+  .stagger-1 { transition-delay: 0ms; }
+  .stagger-2 { transition-delay: 100ms; }
+  .stagger-3 { transition-delay: 200ms; }
+  .stagger-4 { transition-delay: 300ms; }
+  .stagger-5 { transition-delay: 400ms; }
+  .stagger-6 { transition-delay: 500ms; }
+
+  /* Respect user preference */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-left, .reveal-right, .reveal-scale {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .card-glow:hover::before {
+      animation: none;
+    }
+    .card-accent-top:hover::after {
+      transition: none;
+    }
   }
 }

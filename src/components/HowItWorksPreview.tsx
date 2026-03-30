@@ -1,7 +1,9 @@
 import { Search, CalendarCheck, Car, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function HowItWorksPreview() {
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
   const steps = [
     {
       number: '1',
@@ -24,9 +26,9 @@ export default function HowItWorksPreview() {
   ];
 
   return (
-    <section className="section-white py-20">
+    <section ref={sectionRef} className="section-mint py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
+        <div className={`text-center mb-14 reveal ${isVisible ? 'visible' : ''}`}>
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
             How it works
           </h2>
@@ -37,7 +39,7 @@ export default function HowItWorksPreview() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {steps.map((step, index) => (
-            <div key={index} className="relative text-center group">
+            <div key={index} className={`relative text-center group reveal ${isVisible ? 'visible' : ''} stagger-${index + 1}`}>
               {/* Connector line */}
               {index < steps.length - 1 && (
                 <div className="hidden md:block absolute top-12 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary-300 to-primary-100" />

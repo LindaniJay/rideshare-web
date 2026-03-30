@@ -1,7 +1,9 @@
 import { Car, Shield, CreditCard, Users, Zap, MessageSquare, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function EnhancedFeatures() {
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
   const features = [
     {
       icon: <Car size={28} />,
@@ -42,10 +44,10 @@ export default function EnhancedFeatures() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section ref={sectionRef} className="py-20 section-white-gradient dots-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className={`text-center mb-14 reveal ${isVisible ? 'visible' : ''}`}>
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
             Everything you need for
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-accent-500">
@@ -62,7 +64,7 @@ export default function EnhancedFeatures() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover:-translate-y-1"
+              className={`group relative bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover:-translate-y-1 card-glow card-accent-top reveal ${isVisible ? 'visible' : ''} stagger-${index + 1}`}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-accent-50 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
 

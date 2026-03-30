@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import FAQAccordion from './FAQAccordion';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function HomeFAQs() {
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
   const items = [
     {
       question: 'How does RideShare SA work?',
@@ -36,9 +38,9 @@ export default function HomeFAQs() {
   ];
 
   return (
-    <section className="section-light py-20">
+    <section ref={sectionRef} className="section-light py-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 reveal ${isVisible ? 'visible' : ''}`}>
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
             Common questions
           </h2>
@@ -47,7 +49,9 @@ export default function HomeFAQs() {
           </p>
         </div>
 
-        <FAQAccordion items={items} />
+        <div className={`reveal-scale ${isVisible ? 'visible' : ''}`}>
+          <FAQAccordion items={items} />
+        </div>
 
         <div className="mt-8 text-center">
           <Link to="/faq" className="btn-outline inline-flex items-center justify-center">
