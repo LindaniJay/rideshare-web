@@ -36,7 +36,7 @@ export default function ComingSoon() {
   return (
     <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800 px-4 py-16">
       <div className="max-w-2xl w-full">
-        <div className="glass-card-dark p-10 text-center">
+        <div className="glass-card-dark p-5 sm:p-10 text-center">
           <Helmet>
             <title>Coming Soon | RideShare SA</title>
             <meta name="description" content="RideShare SA is launching soon! Join our waitlist to be notified when peer-to-peer car rentals are available in South Africa." />

@@ -171,7 +171,7 @@ export default function Navbar() {
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <div className="lg:hidden py-6 border-t border-white/20">
+            <div className="lg:hidden py-6 border-t border-white/20 max-h-[calc(100vh-5rem)] overflow-y-auto">
               <div className="space-y-2">
                 {/* Main Navigation */}
                 <div className="mb-4">

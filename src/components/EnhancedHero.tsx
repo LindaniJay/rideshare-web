@@ -14,7 +14,7 @@ export default function EnhancedHero() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold font-heading text-white mb-6 animate-slide-up">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold font-heading text-white mb-6 animate-slide-up">
             <span className="block">Rent Cars from</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-primary-400">
               Local Owners
@@ -22,7 +22,7 @@ export default function EnhancedHero() {
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed animate-slide-up delay-200">
+          <p className="text-lg sm:text-xl md:text-2xl text-white mb-10 max-w-3xl mx-auto leading-relaxed animate-slide-up delay-200">
             South Africa's peer-to-peer car rental marketplace.
             Affordable rates, trusted owners, flexible pickups.
           </p>
@@ -33,14 +33,14 @@ export default function EnhancedHero() {
               href={PLATFORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white text-primary-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 flex items-center justify-center space-x-3"
+              className="group bg-white text-primary-600 hover:bg-gray-100 font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 flex items-center justify-center space-x-3"
             >
               <span>Browse Cars</span>
               <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
             </a>
             <Link
               to="/how-it-works"
-              className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold py-4 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3"
+              className="group border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3"
             >
               <span>How It Works</span>
             </Link>

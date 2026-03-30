@@ -189,19 +189,19 @@ export default function About() {
             </p>
           </div>
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary-200"></div>
+            <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 h-full w-1 bg-primary-200"></div>
             {milestones.map((milestone, index) => (
-              <div key={index} className={`relative flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                  <div className="glass-card p-6">
+              <div key={index} className={`relative flex items-center mb-8 justify-start md:${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                <div className={`w-full pl-12 md:pl-0 md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'}`}>
+                  <div className="glass-card p-4 sm:p-6">
                     <div className="text-primary-600 font-bold mb-2">{milestone.year}</div>
-                    <h3 className="text-xl font-semibold font-heading text-gray-900 mb-2">
+                    <h3 className="text-lg sm:text-xl font-semibold font-heading text-gray-900 mb-2">
                       {milestone.title}
                     </h3>
-                    <p className="text-gray-600">{milestone.description}</p>
+                    <p className="text-gray-600 text-sm sm:text-base">{milestone.description}</p>
                   </div>
                 </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-500 rounded-full border-4 border-white"></div>
+                <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 -translate-x-1/2 w-4 h-4 bg-primary-500 rounded-full border-4 border-white"></div>
               </div>
             ))}
           </div>

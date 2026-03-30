@@ -56,7 +56,7 @@ export default function UseCasesStrip() {
         </div>
 
         {/* Why RideShare SA vs traditional rentals */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-8 md:p-10">
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-5 sm:p-8 md:p-10">
           <h3 className="text-xl md:text-2xl font-bold font-heading text-gray-900 mb-6 text-center">
             Why choose RideShare SA over traditional rentals?
           </h3>

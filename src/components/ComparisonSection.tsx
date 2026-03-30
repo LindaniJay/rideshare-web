@@ -10,7 +10,7 @@ export default function ComparisonSection() {
   return (
     <section className="section-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-card p-10">
+        <div className="glass-card p-5 sm:p-10">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold font-heading text-gray-900 mb-2">
               Why RideShare SA vs traditional rentals?
