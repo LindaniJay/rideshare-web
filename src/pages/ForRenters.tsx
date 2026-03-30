@@ -3,33 +3,6 @@ import CTABanner from '../components/CTABanner';
 import { Helmet } from 'react-helmet';
 
 export default function ForRenters() {
-  // ...existing code...
-  return (
-    <>
-      <Helmet>
-        <title>For Renters | RideShare SA - Rent a Car</title>
-        <meta name="description" content="Rent a car easily with RideShare SA. Choose from hundreds of vehicles, flexible pricing, and safe peer-to-peer rentals in South Africa." />
-        <meta name="keywords" content="renters, rent a car, rideshare, car rental, South Africa, peer-to-peer" />
-        <meta property="og:title" content="For Renters | RideShare SA - Rent a Car" />
-        <meta property="og:description" content="Rent a car easily with RideShare SA. Choose from hundreds of vehicles, flexible pricing, and safe peer-to-peer rentals in South Africa." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ridesharesa.co.za/for-renters" />
-        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "name": "For Renters | RideShare SA",
-              "url": "https://www.ridesharesa.co.za/for-renters",
-              "description": "Rent a car easily with RideShare SA. Choose from hundreds of vehicles, flexible pricing, and safe peer-to-peer rentals in South Africa."
-            }
-          `}
-        </script>
-      </Helmet>
-      {/* ...existing code... */}
-    </>
-  );
   const useCases = [
     {
       title: 'Weekend Getaways',
@@ -127,6 +100,15 @@ export default function ForRenters() {
   ];
 
   return (
+    <>
+      <Helmet>
+        <title>For Renters | RideShare SA - Rent a Car</title>
+        <meta name="description" content="Rent a car easily with RideShare SA. Choose from hundreds of vehicles, flexible pricing, and safe peer-to-peer rentals in South Africa." />
+        <meta property="og:title" content="For Renters | RideShare SA - Rent a Car" />
+        <meta property="og:description" content="Rent a car easily with RideShare SA." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ridesharesa.co.za/for-renters" />
+      </Helmet>
     <div>
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
@@ -271,5 +253,6 @@ export default function ForRenters() {
         buttonText="Find Your Next Ride"
       />
     </div>
+    </>
   );
 }

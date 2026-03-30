@@ -4,33 +4,6 @@ import { PLATFORM_URL } from '../config/platform';
 import { Helmet } from 'react-helmet';
 
 export default function PlatformFeatures() {
-  // ...existing code...
-  return (
-    <>
-      <Helmet>
-        <title>Platform Features | RideShare SA</title>
-        <meta name="description" content="Explore RideShare SA's platform features: vehicle management, advanced search, secure payments, safety, and real-time communication for car rentals in South Africa." />
-        <meta name="keywords" content="features, platform, rideshare, car rental, South Africa, secure payments, safety" />
-        <meta property="og:title" content="Platform Features | RideShare SA" />
-        <meta property="og:description" content="Explore RideShare SA's platform features: vehicle management, advanced search, secure payments, safety, and real-time communication for car rentals in South Africa." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ridesharesa.co.za/platform-features" />
-        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "name": "Platform Features | RideShare SA",
-              "url": "https://www.ridesharesa.co.za/platform-features",
-              "description": "Explore RideShare SA's platform features: vehicle management, advanced search, secure payments, safety, and real-time communication for car rentals in South Africa."
-            }
-          `}
-        </script>
-      </Helmet>
-      {/* ...existing code... */}
-    </>
-  );
   const coreFeatures = [
     {
       icon: <Car size={32} />,
@@ -122,6 +95,15 @@ export default function PlatformFeatures() {
   ];
 
   return (
+    <>
+      <Helmet>
+        <title>Platform Features | RideShare SA</title>
+        <meta name="description" content="Explore RideShare SA's platform features: vehicle management, advanced search, secure payments, safety, and real-time communication for car rentals in South Africa." />
+        <meta property="og:title" content="Platform Features | RideShare SA" />
+        <meta property="og:description" content="Explore RideShare SA's platform features." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ridesharesa.co.za/features" />
+      </Helmet>
     <div>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800 text-white">
@@ -332,5 +314,6 @@ export default function PlatformFeatures() {
         </div>
       </section>
     </div>
+    </>
   );
 }

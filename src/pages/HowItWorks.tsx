@@ -3,33 +3,6 @@ import CTABanner from '../components/CTABanner';
 import { Helmet } from 'react-helmet';
 
 export default function HowItWorks() {
-  // ...existing code...
-  return (
-    <>
-      <Helmet>
-        <title>How It Works | RideShare SA - Peer-to-Peer Car Rentals</title>
-        <meta name="description" content="Learn how RideShare SA works for hosts and renters. Step-by-step guide to listing, booking, and renting cars in South Africa." />
-        <meta name="keywords" content="how it works, rideshare, car rental, booking, hosting, South Africa" />
-        <meta property="og:title" content="How It Works | RideShare SA - Peer-to-Peer Car Rentals" />
-        <meta property="og:description" content="Learn how RideShare SA works for hosts and renters. Step-by-step guide to listing, booking, and renting cars in South Africa." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ridesharesa.co.za/how-it-works" />
-        <meta property="og:image" content="https://www.ridesharesa.co.za/og-image.png" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "name": "How It Works | RideShare SA",
-              "url": "https://www.ridesharesa.co.za/how-it-works",
-              "description": "Learn how RideShare SA works for hosts and renters. Step-by-step guide to listing, booking, and renting cars in South Africa."
-            }
-          `}
-        </script>
-      </Helmet>
-      {/* ...existing code... */}
-    </>
-  );
   const renterSteps = [
     {
       title: 'Search Cars',
@@ -108,6 +81,15 @@ export default function HowItWorks() {
   ];
 
   return (
+    <>
+      <Helmet>
+        <title>How It Works | RideShare SA</title>
+        <meta name="description" content="Learn how RideShare SA works for hosts and renters. Step-by-step guide to listing, booking, and renting cars in South Africa." />
+        <meta property="og:title" content="How It Works | RideShare SA" />
+        <meta property="og:description" content="Learn how RideShare SA works for hosts and renters." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ridesharesa.co.za/how-it-works" />
+      </Helmet>
     <div>
       {/* Header */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-600 text-white py-20">
@@ -260,5 +242,6 @@ export default function HowItWorks() {
         buttonText="Go to RideShare SA Platform"
       />
     </div>
+    </>
   );
 }
